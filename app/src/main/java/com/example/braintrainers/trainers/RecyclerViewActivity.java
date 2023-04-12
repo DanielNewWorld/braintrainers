@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.braintrainers.R;
@@ -44,6 +43,7 @@ public class RecyclerViewActivity extends Activity {
         int z = 0;
         persons = new ArrayList<>();
         boolean booleanWIN = false;
+        int rotation = 0;
 
         txtInfoNumber = (TextView) findViewById(R.id.txt_info_number);
         z = (int) (Math.random()*27);
@@ -51,12 +51,13 @@ public class RecyclerViewActivity extends Activity {
         for (int i = 0; i < 27; i++) {
             x = (int) (2000 + Math.random()*4000);
             y = (int) (Math.random()*11);
+            rotation = (int) (Math.random()*50 - 25);
             if (i == z) {
                 booleanWIN = true;
                 txtInfoNumber.setText(Integer.toString(x));
             }
                 else booleanWIN = false;
-            persons.add(new Person(Integer.toString(x), color[y], z, booleanWIN));
+            persons.add(new Person(Integer.toString(x), color[y], z, booleanWIN, rotation));
         }
 
     }

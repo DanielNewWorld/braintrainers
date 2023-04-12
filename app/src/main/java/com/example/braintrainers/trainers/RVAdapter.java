@@ -54,6 +54,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         personViewHolder.personName.setText(persons.get(i).name);
         personViewHolder.personName.setBackgroundColor(persons.get(i).color);
         personViewHolder.personName.setTextColor(persons.get(i).color - 15000);
+        personViewHolder.personName.setRotation(persons.get(i).rotation);
 
         View.OnClickListener onClickGo = new View.OnClickListener() {
             @Override
