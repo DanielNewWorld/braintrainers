@@ -47,6 +47,9 @@
                 android:value="" />
         </activity>
 
+        <activity android:name=".trainers.CardViewActivity"></activity>
+        <activity android:name=".trainers.RecyclerViewActivity"></activity>
+
     </application>
 
 </manifest>
