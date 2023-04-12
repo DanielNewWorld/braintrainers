@@ -20,5 +20,6 @@
     <string name="training_txt_find_number_desc_2">Концентрація та перемикання уваги</string>
     <string name="training_txt_find_number_desc_3">Зорове сприйняття</string>
     <string name="training_btn_start">Почати</string>
+    <string name="training_txt_info">Знайдіть вказане число: </string>
 
 </resources>
