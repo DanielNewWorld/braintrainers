@@ -37,16 +37,6 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <activity
-            android:name=".trainers.TrainersActivity"
-            android:exported="false"
-            android:label="@string/menu_home"
-            android:theme="@style/Theme.BrainTrainers" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
         <activity android:name=".trainers.CardViewActivity"></activity>
         <activity android:name=".trainers.RecyclerViewActivity"></activity>
 

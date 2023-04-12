@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.braintrainers.trainers.RecyclerViewActivity;
-import com.example.braintrainers.trainers.TrainersActivity;
 
 public class DescriptionTrainers extends AppCompatActivity {
 

@@ -49,6 +49,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         personViewHolder.personName.setText(persons.get(i).name);
         personViewHolder.personName.setBackgroundColor(persons.get(i).color);
+        personViewHolder.personName.setTextColor(Color.WHITE);
     }
 
     @Override

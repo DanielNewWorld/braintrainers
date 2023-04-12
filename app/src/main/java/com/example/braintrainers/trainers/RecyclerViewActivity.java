@@ -1,6 +1,7 @@
 package com.example.braintrainers.trainers;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,20 +34,19 @@ public class RecyclerViewActivity extends Activity {
     }
 
     private void initializeData(){
-        int color = -65536;
+        int[] color  = new int[] {Color.BLACK,Color.BLUE,Color.CYAN,Color.DKGRAY,Color.GRAY,
+        Color.GREEN,Color.LTGRAY,Color.RED, Color.MAGENTA,Color.TRANSPARENT,
+        Color.YELLOW};
+        int y = -65536;
+        int x = 0;
         persons = new ArrayList<>();
-        persons.add(new Person("1278", color));
-        persons.add(new Person("9878", color));
-        persons.add(new Person("5656", color));
-        persons.add(new Person("9877", color));
-        persons.add(new Person("8789", color));
-        persons.add(new Person("9899", color));
-        persons.add(new Person("5656", color));
-        persons.add(new Person("4654", color));
-        persons.add(new Person("8989", color));
-        persons.add(new Person("9354", color));
-        persons.add(new Person("6678", color));
-        persons.add(new Person("8945", color));
+
+        for (int i = 0; i < 27; i++) {
+            x = (int) (2000 + Math.random()*4000);
+            y = (int) (Math.random()*11);
+            persons.add(new Person(Integer.toString(x), color[y]));
+        }
+
     }
 
     private void initializeAdapter(){
