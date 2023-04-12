@@ -2,12 +2,23 @@
     <string name="app_name">brain trainers</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">brain trainers</string>
+    <string name="nav_header_subtitle">braintrainers@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Налаштування</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Тренування</string>
+    <string name="menu_gallery">Тренажери</string>
+    <string name="menu_slideshow">Статистика</string>
+
+    <string name="home_txt_hello">Вітаю!</string>
+    <string name="home_btn_start">Почати тренування</string>
+
+    <string name="training_txt_find_number">Знайди число</string>
+    <string name="training_txt_find_number_desc">Тренує:</string>
+    <string name="training_txt_find_number_desc_1">Довільна увага</string>
+    <string name="training_txt_find_number_desc_2">Концентрація та перемикання уваги</string>
+    <string name="training_txt_find_number_desc_3">Зорове сприйняття</string>
+    <string name="training_btn_start">Почати</string>
+
 </resources>

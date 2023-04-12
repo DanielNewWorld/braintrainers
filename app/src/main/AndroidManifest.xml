@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrainTrainers"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -19,7 +20,6 @@
             android:theme="@style/Theme.BrainTrainers.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -27,6 +27,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".DescriptionTrainers"
+            android:label="@string/menu_home"
+            android:theme="@style/Theme.BrainTrainers.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".trainers.TrainersActivity"
+            android:exported="false"
+            android:label="@string/menu_home"
+            android:theme="@style/Theme.BrainTrainers" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
     </application>
 
 </manifest>
