@@ -1,5 +1,6 @@
 package com.example.braintrainers.trainers;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     @Override
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         personViewHolder.personName.setText(persons.get(i).name);
+        personViewHolder.personName.setBackgroundColor(persons.get(i).color);
     }
 
     @Override

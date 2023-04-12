@@ -15,8 +15,8 @@ public class CardViewActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.cardview_activity);
-        personName = (TextView) findViewById(R.id.person_name);
+        //personName = (TextView) findViewById(R.id.person_name);
 
-        personName.setText("Emma Wilson");
+        //personName.setText("Emma Wilson");
     }
 }

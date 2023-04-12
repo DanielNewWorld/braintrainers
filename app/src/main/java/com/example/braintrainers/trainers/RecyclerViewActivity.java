@@ -33,19 +33,20 @@ public class RecyclerViewActivity extends Activity {
     }
 
     private void initializeData(){
+        int color = -65536;
         persons = new ArrayList<>();
-        persons.add(new Person("1278"));
-        persons.add(new Person("9878"));
-        persons.add(new Person("5656"));
-        persons.add(new Person("9877"));
-        persons.add(new Person("8789"));
-        persons.add(new Person("9899"));
-        persons.add(new Person("5656"));
-        persons.add(new Person("4654"));
-        persons.add(new Person("8989"));
-        persons.add(new Person("9354"));
-        persons.add(new Person("6678"));
-        persons.add(new Person("8945"));
+        persons.add(new Person("1278", color));
+        persons.add(new Person("9878", color));
+        persons.add(new Person("5656", color));
+        persons.add(new Person("9877", color));
+        persons.add(new Person("8789", color));
+        persons.add(new Person("9899", color));
+        persons.add(new Person("5656", color));
+        persons.add(new Person("4654", color));
+        persons.add(new Person("8989", color));
+        persons.add(new Person("9354", color));
+        persons.add(new Person("6678", color));
+        persons.add(new Person("8945", color));
     }
 
     private void initializeAdapter(){
