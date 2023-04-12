@@ -37,7 +37,7 @@ public class RecyclerViewActivity extends Activity {
 
     private void initializeData(){
         int[] color  = new int[] {Color.BLACK,Color.BLUE,Color.CYAN,Color.DKGRAY,Color.GRAY,
-        Color.GREEN,Color.LTGRAY,Color.RED, Color.MAGENTA,Color.WHITE,
+        Color.GREEN,Color.LTGRAY,Color.RED, Color.MAGENTA,Color.WHITE, Color.TRANSPARENT,
         Color.YELLOW};
         int y = -65536;
         int x = 0;

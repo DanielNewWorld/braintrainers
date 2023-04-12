@@ -53,13 +53,23 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     public void onBindViewHolder(PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
         personViewHolder.personName.setText(persons.get(i).name);
         personViewHolder.personName.setBackgroundColor(persons.get(i).color);
-        personViewHolder.personName.setTextColor(Color.WHITE);
+        personViewHolder.personName.setTextColor(persons.get(i).color - 15000);
 
         View.OnClickListener onClickGo = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (persons.get(i).booleanWIN == true) {
-                    Intent intent = new Intent(v.getContext(), DescriptionTrainers.class);
+                    personViewHolder.personName.setTextColor(Color.GREEN);
+                    personViewHolder.personName.setBackgroundColor(Color.GREEN);
+
+                    Intent intent = new Intent(v.getContext(), RecyclerViewActivity.class);
+                    v.getContext().startActivity(intent);
+                } else
+                {
+                    personViewHolder.personName.setTextColor(Color.RED);
+                    personViewHolder.personName.setBackgroundColor(Color.RED);
+
+                    Intent intent = new Intent(v.getContext(), RecyclerViewActivity.class);
                     v.getContext().startActivity(intent);
                 }
             }
