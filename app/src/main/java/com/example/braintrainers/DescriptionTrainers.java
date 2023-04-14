@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.braintrainers.trainers.RecyclerViewActivity;
+import com.example.braintrainers.trainers.TrainersActivity;
 
 public class DescriptionTrainers extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class DescriptionTrainers extends AppCompatActivity {
             public void onClick(View v) {
                 Context context = v.getContext();
                 //Intent intent = new Intent(context, TrainersActivity.class);
-                Intent intent = new Intent(context, RecyclerViewActivity.class);
+                Intent intent = new Intent(context, TrainersActivity.class);
                 context.startActivity(intent);
             }
         };

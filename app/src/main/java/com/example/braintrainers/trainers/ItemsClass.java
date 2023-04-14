@@ -1,13 +1,13 @@
 package com.example.braintrainers.trainers;
 
-class Person {
+class ItemsClass {
     String name;
     int color;
     int z;
     boolean booleanWIN;
     int rotation;
 
-    Person(String name, int color, int z, boolean booleanWIN, int rotation) {
+    ItemsClass(String name, int color, int z, boolean booleanWIN, int rotation) {
         this.name = name;
         this.color = color;
         this.z = z;

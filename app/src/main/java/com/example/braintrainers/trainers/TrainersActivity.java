@@ -1,10 +1,7 @@
 package com.example.braintrainers.trainers;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,16 +16,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.braintrainers.DescriptionTrainers;
 import com.example.braintrainers.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
-public class RecyclerViewActivity extends Activity {
-    private List<Person> persons;
+public class TrainersActivity extends Activity {
+    private List<ItemsClass> itemsClasses;
     private RecyclerView rv;
     TextView txtInfoNumber, txtTime;
     LinearLayout llPanel;
@@ -63,7 +57,7 @@ public class RecyclerViewActivity extends Activity {
         int x = 0;
         int z = 0;
         int count;
-        persons = new ArrayList<>();
+        itemsClasses = new ArrayList<>();
         boolean booleanWIN = false;
         int rotation = 0;
 
@@ -108,12 +102,12 @@ public class RecyclerViewActivity extends Activity {
                 txtInfoNumber.setText(Integer.toString(x));
             }
                 else booleanWIN = false;
-            persons.add(new Person(Integer.toString(x), color[y], z, booleanWIN, rotation));
+            itemsClasses.add(new ItemsClass(Integer.toString(x), color[y], z, booleanWIN, rotation));
         }
     }
 
     private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(persons);
+        RVAdapter adapter = new RVAdapter(itemsClasses);
         rv.setAdapter(adapter);
     }
 
@@ -131,10 +125,10 @@ public class RecyclerViewActivity extends Activity {
             }
         }
 
-        List<Person> persons;
+        List<ItemsClass> itemsClasses;
 
-        RVAdapter(List<Person> persons){
-            this.persons = persons;
+        RVAdapter(List<ItemsClass> itemsClasses){
+            this.itemsClasses = itemsClasses;
         }
 
         @Override
@@ -151,14 +145,14 @@ public class RecyclerViewActivity extends Activity {
 
         @Override
         public void onBindViewHolder(PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
-            personViewHolder.personName.setText(persons.get(i).name);
+            personViewHolder.personName.setText(itemsClasses.get(i).name);
 
-            if (level >= 2) {personViewHolder.personName.setRotation(persons.get(i).rotation);}
+            if (level >= 2) {personViewHolder.personName.setRotation(itemsClasses.get(i).rotation);}
 
             if (level >= 4) {
-                personViewHolder.personName.setBackgroundColor(persons.get(i).color);
+                personViewHolder.personName.setBackgroundColor(itemsClasses.get(i).color);
 
-                if (persons.get(i).color == Color.WHITE) {
+                if (itemsClasses.get(i).color == Color.WHITE) {
                     personViewHolder.personName.setTextColor(Color.BLACK);}
                 else personViewHolder.personName.setTextColor(Color.WHITE);
             }
@@ -166,7 +160,7 @@ public class RecyclerViewActivity extends Activity {
             View.OnClickListener onClickGo = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (persons.get(i).booleanWIN == true) {
+                    if (itemsClasses.get(i).booleanWIN == true) {
                         level = level + 1;
                         llPanel.setBackgroundColor(Color.GREEN);
 
@@ -190,7 +184,7 @@ public class RecyclerViewActivity extends Activity {
 
                     if (timeElapsed <= 1) {
                         txtTime.setText("00:00");
-                        Intent intent = new Intent(RecyclerViewActivity.this, TrainersEndActivity.class);
+                        Intent intent = new Intent(TrainersActivity.this, TrainersEndActivity.class);
                         startActivity(intent);
                     }
                 }
@@ -203,7 +197,7 @@ public class RecyclerViewActivity extends Activity {
 
         @Override
         public int getItemCount() {
-            return persons.size();
+            return itemsClasses.size();
         }
     }
 

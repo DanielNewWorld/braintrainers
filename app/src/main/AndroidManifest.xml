@@ -37,7 +37,7 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".trainers.RecyclerViewActivity"></activity>
+        <activity android:name=".trainers.TrainersActivity"></activity>
         <activity android:name=".trainers.TrainersEndActivity"></activity>
 
     </application>
