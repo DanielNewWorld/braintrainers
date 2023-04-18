@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">brain trainers</string>
+    <string name="app_name">Розвиток розуму</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Розвиток розуму</string>
@@ -22,6 +22,9 @@
     <string name="training_btn_start">Почати</string>
     <string name="training_txt_info">Знайдіть вказане число: </string>
     <string name="training_txt_info_end">Тренування закінчено</string>
+    <string name="training_txt_answer_end">Вірних відповідей</string>
+    <string name="training_txt_neuron_end">Створено нейронів</string>
+    <string name="training_txt_results_end">Ваші результати</string>
 
     <string name="back_txt">Натисніть ще раз, щоб вийти</string>
 </resources>

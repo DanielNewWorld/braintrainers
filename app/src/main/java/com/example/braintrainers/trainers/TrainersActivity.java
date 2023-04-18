@@ -30,6 +30,10 @@ public class TrainersActivity extends Activity {
     int level = 0;
     private static long back_pressed;
 
+    int countTrainerItem = 0;
+    int maxCountTrueAnswer = 0;
+    int neuron = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +55,7 @@ public class TrainersActivity extends Activity {
 
     public void initializeData(){
         int[] color  = new int[] {Color.BLACK,Color.BLUE,Color.CYAN,Color.DKGRAY,Color.GRAY,
-        Color.GREEN,Color.LTGRAY,Color.RED, Color.MAGENTA,Color.WHITE, Color.TRANSPARENT,
+        Color.GREEN,Color.LTGRAY,Color.RED, Color.MAGENTA,Color.WHITE,
         Color.YELLOW};
         int y = -65536;
         int x = 0;
@@ -161,8 +165,34 @@ public class TrainersActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     if (itemsClasses.get(i).booleanWIN == true) {
-                        level = level + 1;
+                        switch (level) {
+                            case 0:
+                                neuron = neuron + 10;
+                                break;
+
+                            case 1:
+                                neuron = neuron + 50;
+                                break;
+
+                            case 2:
+                                neuron = neuron + 100;
+                                break;
+
+                            case 3:
+                                neuron = neuron + 150;
+                                break;
+
+                            case 4:
+                                neuron = neuron + 200;
+                                break;
+
+                            default:
+                                neuron = neuron + 10;
+                                break;
+                        }
                         llPanel.setBackgroundColor(Color.GREEN);
+                        maxCountTrueAnswer ++;
+                        level ++;
 
                         initializeData();
                         initializeAdapter();
@@ -173,6 +203,8 @@ public class TrainersActivity extends Activity {
                         initializeData();
                         initializeAdapter();
                     }
+
+                    countTrainerItem ++;
 
                     long endTime = System.nanoTime();
                     // получаем разницу между двумя значениями нано-времени
@@ -185,6 +217,9 @@ public class TrainersActivity extends Activity {
                     if (timeElapsed <= 1) {
                         txtTime.setText("00:00");
                         Intent intent = new Intent(TrainersActivity.this, TrainersEndActivity.class);
+                        intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
+                        intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
+                        intent.putExtra("neuron", Integer.toString(neuron));
                         startActivity(intent);
                     }
                 }
