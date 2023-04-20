@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Розвиток розуму</string>
-    <string name="nav_header_subtitle">braintrainers@gmail.com</string>
+    <string name="nav_header_subtitle">daniel.new.world@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Налаштування</string>
 
@@ -27,4 +27,5 @@
     <string name="training_txt_results_end">Ваші результати</string>
 
     <string name="back_txt">Натисніть ще раз, щоб вийти</string>
+    <string name="Privacy">Політика конфіденційності</string>
 </resources>
