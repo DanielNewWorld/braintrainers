@@ -15,7 +15,6 @@
     <string name="home_btn_start">Почати тренування</string>
 
     //--end description--
-    <string name="training_txt_info">Знайдіть вказане число: </string>
     <string name="training_txt_info_end">Тренування закінчено</string>
     <string name="training_txt_answer_end">Вірних відповідей</string>
     <string name="training_txt_neuron_end">Створено нейронів</string>
@@ -29,9 +28,15 @@
     //----0----
     <string name="training_txt_desc">Тренує:</string>
     <string name="training_btn_start">Почати</string>
-    <string name="training_btn_next">Наступна гра</string>
+    <string name="training_btn_next">Грати</string>
     <string name="training_txt_name_1">Знайди число</string>
     <string name="training_txt_name_2">Квітник</string>
+    <string name="btn_yes">так</string>
+    <string name="btn_no">ні</string>
+
+    //--quest--
+    <string name="training_txt_quest_1">Знайдіть вказане число</string>
+    <string name="training_txt_quest_2">Чи збігається назва кольору на верхній картці з кольором тексту на нижній картці?</string>
 
     //----function----
     <string name="training_txt_desc_uvaga_dovilna">Довільна увага</string>

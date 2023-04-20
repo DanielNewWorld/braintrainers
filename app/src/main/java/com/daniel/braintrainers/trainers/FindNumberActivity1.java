@@ -38,7 +38,7 @@ public class FindNumberActivity1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recyclerview_activity);
+        setContentView(R.layout.find_number_recyclerview_activity);
 
         rv=(RecyclerView)findViewById(R.id.rv);
         txtInfoNumber = (TextView) findViewById(R.id.txt_info_number);

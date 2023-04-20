@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +24,8 @@ import java.util.List;
 
 public class KvitnykActivity2 extends Activity {
     private RecyclerView rv;
-    TextView txtInfoNumber, txtTime;
+    TextView txtTime;
+    Button btnYes, btnNo;
     LinearLayout llPanel;
     final long startTime = System.nanoTime();
 
@@ -35,19 +37,120 @@ public class KvitnykActivity2 extends Activity {
     private static long back_pressed;
     private List<ItemsClass> itemsClasses;
 
+    boolean quest = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recyclerview_activity);
+        setContentView(R.layout.kvitnyk_recyclerview_activity);
 
         rv=(RecyclerView)findViewById(R.id.rv);
-        txtInfoNumber = (TextView) findViewById(R.id.txt_info_number);
         txtTime = (TextView) findViewById(R.id.txtTime);
         llPanel = (LinearLayout) findViewById(R.id.ll_panel_trainers);
+        btnNo = (Button) findViewById(R.id.btn_no);
+        btnYes = (Button) findViewById(R.id.btn_yes);
 
-        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity2.this, 2);
+        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity2.this, 1);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
+
+        View.OnClickListener onClickYes = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quest == true) {
+                    switch (level) {
+                        case 0:
+                            neuron = neuron + 10;
+                            break;
+
+                        case 1:
+                            neuron = neuron + 50;
+                            break;
+
+                        case 2:
+                            neuron = neuron + 100;
+                            break;
+
+                        case 3:
+                            neuron = neuron + 150;
+                            break;
+
+                        case 4:
+                            neuron = neuron + 200;
+                            break;
+
+                        default:
+                            neuron = neuron + 10;
+                            break;
+                    }
+                    llPanel.setBackgroundColor(Color.GREEN);
+                    maxCountTrueAnswer ++;
+                    level ++;
+
+                    initializeData();
+                    initializeAdapter();
+                } else
+                {
+                    llPanel.setBackgroundColor(Color.RED);
+
+                    initializeData();
+                    initializeAdapter();
+                }
+
+                countTrainerItem ++;
+                timeCount();
+            }
+        };
+        btnYes.setOnClickListener(onClickYes);
+
+        View.OnClickListener onClickNo = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quest == false) {
+                    switch (level) {
+                        case 0:
+                            neuron = neuron + 10;
+                            break;
+
+                        case 1:
+                            neuron = neuron + 50;
+                            break;
+
+                        case 2:
+                            neuron = neuron + 100;
+                            break;
+
+                        case 3:
+                            neuron = neuron + 150;
+                            break;
+
+                        case 4:
+                            neuron = neuron + 200;
+                            break;
+
+                        default:
+                            neuron = neuron + 10;
+                            break;
+                    }
+                    llPanel.setBackgroundColor(Color.GREEN);
+                    maxCountTrueAnswer ++;
+                    level ++;
+
+                    initializeData();
+                    initializeAdapter();
+                } else
+                {
+                    llPanel.setBackgroundColor(Color.RED);
+
+                    initializeData();
+                    initializeAdapter();
+                }
+
+                countTrainerItem ++;
+                timeCount();
+            }
+        };
+        btnNo.setOnClickListener(onClickNo);
 
         initializeData();
         initializeAdapter();
@@ -80,46 +183,29 @@ public class KvitnykActivity2 extends Activity {
                 Color.GREEN,Color.RED, Color.MAGENTA,Color.YELLOW};
         String[] colorName  = new String[] {"чорний","блакитний","синій","сірий",
                 "зелений","червоний", "пурпурний","жовтий"};
-        int y = -65536;
-        int x = 0;
+        int x1, y1, x2, y2 = 0;
         int count = 2;
         itemsClasses = new ArrayList<>();
         boolean booleanWIN = false;
         int rotation = 0;
 
-        switch (level) {
-            case 0:
-                break;
-
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-
-            default:
-                break;
-        }
-
         count = 2;
 
-        for (int i = 0; i < count; i++) {
-            x = (int) (Math.random()*8);
-            y = (int) (Math.random()*8);
+        //for (int i = 0; i < count; i++) {
+            x1 = (int) (Math.random()*8);
+            y1 = (int) (Math.random()*8);
             rotation = (int) (Math.random()*50 - 25);
-            if (x == y) {
-                booleanWIN = true;
-                txtInfoNumber.setText(colorName[x]);
-            }
-            else booleanWIN = false;
-            itemsClasses.add(new ItemsClass(colorName[x], color[y], booleanWIN, rotation));
+            itemsClasses.add(new ItemsClass(colorName[x1], color[y1], booleanWIN, rotation));
+        //}
+        x2 = (int) (Math.random()*8);
+        y2 = (int) (Math.random()*8);
+        rotation = (int) (Math.random()*50 - 25);
+        itemsClasses.add(new ItemsClass(colorName[x2], color[y2], booleanWIN, rotation));
+
+        if (x1 == y2) {
+            quest = true;
         }
+        else quest = false;
     }
 
     private void initializeAdapter(){
@@ -162,59 +248,11 @@ public class KvitnykActivity2 extends Activity {
         @Override
         public void onBindViewHolder(RVAdapter.PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
             personViewHolder.personName.setText(itemsClasses.get(i).name);
-            personViewHolder.personName.setBackgroundColor(Color.WHITE);
             personViewHolder.personName.setTextColor(itemsClasses.get(i).color);
+            personViewHolder.personName.setWidth(400);
+            //personViewHolder.personName.setPadding(5, 20, 5, 20);
 
-            if (level >= 2) {personViewHolder.personName.setRotation(itemsClasses.get(i).rotation);}
-
-            View.OnClickListener onClickGo = new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (itemsClasses.get(i).booleanWIN == true) {
-                        switch (level) {
-                            case 0:
-                                neuron = neuron + 10;
-                                break;
-
-                            case 1:
-                                neuron = neuron + 50;
-                                break;
-
-                            case 2:
-                                neuron = neuron + 100;
-                                break;
-
-                            case 3:
-                                neuron = neuron + 150;
-                                break;
-
-                            case 4:
-                                neuron = neuron + 200;
-                                break;
-
-                            default:
-                                neuron = neuron + 10;
-                                break;
-                        }
-                        llPanel.setBackgroundColor(Color.GREEN);
-                        maxCountTrueAnswer ++;
-                        level ++;
-
-                        initializeData();
-                        initializeAdapter();
-                    } else
-                    {
-                        llPanel.setBackgroundColor(Color.RED);
-
-                        initializeData();
-                        initializeAdapter();
-                    }
-
-                    countTrainerItem ++;
-                    timeCount();
-                }
-            };
-            personViewHolder.personName.setOnClickListener(onClickGo);
+            //if (level >= 2) {personViewHolder.personName.setRotation(itemsClasses.get(i).rotation);}
         }
 
         @Override

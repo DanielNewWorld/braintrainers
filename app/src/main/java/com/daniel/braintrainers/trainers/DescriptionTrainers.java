@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.daniel.braintrainers.R;
 
 public class DescriptionTrainers extends AppCompatActivity {
-    TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3;
+    TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;
     Button btnTrainingStart;
     Intent intent, intentNext;
     String switchTrainer;
@@ -29,6 +29,7 @@ public class DescriptionTrainers extends AppCompatActivity {
         txtDesc1 = (TextView) findViewById(R.id.txt_trainer_decription_1);
         txtDesc2 = (TextView) findViewById(R.id.txt_trainer_decription_2);
         txtDesc3 = (TextView) findViewById(R.id.txt_trainer_decription_3);
+        txtQuest = (TextView) findViewById(R.id.txt_trainer_quest);
 
         intent = getIntent();
         switchTrainer = intent.getStringExtra("numberTrainer");
@@ -60,6 +61,7 @@ public class DescriptionTrainers extends AppCompatActivity {
         switch (switchTrainer) {
             case "2":
                 txtNameTrainer.setText(R.string.training_txt_name_2);
+                txtQuest.setText(R.string.training_txt_quest_2);
                 txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
                 txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
                 txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
