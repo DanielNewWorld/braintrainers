@@ -14,12 +14,15 @@
     <string name="home_txt_hello">Вітаю!</string>
     <string name="home_btn_start">Почати тренування</string>
 
+    //--end description--
     <string name="training_txt_info">Знайдіть вказане число: </string>
     <string name="training_txt_info_end">Тренування закінчено</string>
     <string name="training_txt_answer_end">Вірних відповідей</string>
     <string name="training_txt_neuron_end">Створено нейронів</string>
     <string name="training_txt_results_end">Ваші результати</string>
+    <string name="training_btn_end">Закінчити тренування</string>
 
+    //---
     <string name="back_txt">Натисніть ще раз, щоб вийти</string>
     <string name="Privacy">Політика конфіденційності</string>
 

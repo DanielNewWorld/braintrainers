@@ -70,6 +70,7 @@ public class KvitnykActivity2 extends Activity {
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));
+            intent.putExtra("numberTrainer", "2");
             startActivity(intent);
         }
     }

@@ -70,6 +70,7 @@ public class FindNumberActivity1 extends Activity {
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));
+            intent.putExtra("numberTrainer", "1");
             startActivity(intent);
         }
     }

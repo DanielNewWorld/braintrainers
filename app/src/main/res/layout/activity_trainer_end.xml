@@ -75,9 +75,10 @@
         </TableLayout>
 
         <TextView
+            android:id="@+id/txtTrainerEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/training_txt_info_end"
+            android:text=""
             android:textAlignment="center"
             android:textColor="#9C27B0"
             android:textSize="48dp"

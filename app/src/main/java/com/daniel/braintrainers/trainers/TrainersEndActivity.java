@@ -11,12 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 
 public class TrainersEndActivity extends Activity {
 
     private static long back_pressed;
-    TextView txtNeuron, txtAnswer;
+    TextView txtNeuron, txtAnswer, txtEnd;
     Button btnNextTrainer;
 
     @SuppressLint("MissingInflatedId")
@@ -27,20 +28,43 @@ public class TrainersEndActivity extends Activity {
 
         txtAnswer = (TextView) findViewById(R.id.trainer_txt_answer);
         txtNeuron = (TextView) findViewById(R.id.trainer_txt_neuron);
+        txtEnd = (TextView) findViewById(R.id.txtTrainerEnd);
         btnNextTrainer = (Button) findViewById(R.id.btnNextTrainer);
 
         Intent intent = getIntent();
         txtAnswer.setText(intent.getStringExtra("maxCountTrueAnswer") + " з " +
                 intent.getStringExtra("countTrainerItem"));
         txtNeuron.setText(intent.getStringExtra("neuron"));
+        String switchTrainer = intent.getStringExtra("numberTrainer");
+
+        switch (switchTrainer) {
+            case "2":
+                btnNextTrainer.setText(R.string.training_btn_end);
+                txtEnd.setText(R.string.training_txt_info_end);
+                break;
+
+            default:
+                break;
+        }
 
         View.OnClickListener onClickGo = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent intent = new Intent(context, DescriptionTrainers.class);
-                intent.putExtra("numberTrainer", Integer.toString(2));
-                context.startActivity(intent);
+                Intent intent;
+
+                switch (switchTrainer) {
+                    case "2":
+                        intent = new Intent(context, MainActivity.class);
+                        context.startActivity(intent);
+                        break;
+
+                    default:
+                        intent = new Intent(context, DescriptionTrainers.class);
+                        intent.putExtra("numberTrainer", Integer.toString(2));
+                        context.startActivity(intent);
+                        break;
+                }
             }
         };
         btnNextTrainer.setOnClickListener(onClickGo);
