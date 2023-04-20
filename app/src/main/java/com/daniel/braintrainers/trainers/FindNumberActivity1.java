@@ -21,23 +21,23 @@ import com.daniel.braintrainers.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrainersActivity extends Activity {
-    private List<ItemsClass> itemsClasses;
+public class FindNumberActivity1 extends Activity {
     private RecyclerView rv;
     TextView txtInfoNumber, txtTime;
     LinearLayout llPanel;
     final long startTime = System.nanoTime();
-    int level = 0;
-    private static long back_pressed;
 
     int countTrainerItem = 0;
     int maxCountTrueAnswer = 0;
     int neuron = 0;
 
+    int level = 0;
+    private static long back_pressed;
+    private List<ItemsClass> itemsClasses;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.recyclerview_activity);
 
         rv=(RecyclerView)findViewById(R.id.rv);
@@ -45,12 +45,33 @@ public class TrainersActivity extends Activity {
         txtTime = (TextView) findViewById(R.id.txtTime);
         llPanel = (LinearLayout) findViewById(R.id.ll_panel_trainers);
 
-        GridLayoutManager llm = new GridLayoutManager(this, 3);
+        GridLayoutManager llm = new GridLayoutManager(FindNumberActivity1.this, 3);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
         initializeData();
         initializeAdapter();
+
+        timeCount();
+    }
+
+    public void timeCount(){
+        long endTime = System.nanoTime();
+        // получаем разницу между двумя значениями нано-времени
+        long timeElapsed = 40 - (endTime - startTime) / 1000000 / 1000;
+
+        if (timeElapsed < 10) {
+            txtTime.setText("00:0" + timeElapsed);
+        } else txtTime.setText("00:" + timeElapsed);
+
+        if (timeElapsed <= 1) {
+            txtTime.setText("00:00");
+            Intent intent = new Intent(FindNumberActivity1.this, TrainersEndActivity.class);
+            intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
+            intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
+            intent.putExtra("neuron", Integer.toString(neuron));
+            startActivity(intent);
+        }
     }
 
     public void initializeData(){
@@ -106,7 +127,7 @@ public class TrainersActivity extends Activity {
                 txtInfoNumber.setText(Integer.toString(x));
             }
                 else booleanWIN = false;
-            itemsClasses.add(new ItemsClass(Integer.toString(x), color[y], z, booleanWIN, rotation));
+            itemsClasses.add(new ItemsClass(Integer.toString(x), color[y], booleanWIN, rotation));
         }
     }
 
@@ -205,29 +226,10 @@ public class TrainersActivity extends Activity {
                     }
 
                     countTrainerItem ++;
-
-                    long endTime = System.nanoTime();
-                    // получаем разницу между двумя значениями нано-времени
-                    long timeElapsed = 60 - (endTime - startTime) / 1000000 / 1000;
-
-                    if (timeElapsed < 10) {
-                        txtTime.setText("00:0" + timeElapsed);
-                    } else txtTime.setText("00:" + timeElapsed);
-
-                    if (timeElapsed <= 1) {
-                        txtTime.setText("00:00");
-                        Intent intent = new Intent(TrainersActivity.this, TrainersEndActivity.class);
-                        intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
-                        intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
-                        intent.putExtra("neuron", Integer.toString(neuron));
-                        startActivity(intent);
-                    }
+                    timeCount();
                 }
             };
             personViewHolder.personName.setOnClickListener(onClickGo);
-
-            //personViewHolder.personName.setOnFocusChangeListener();
-
         }
 
         @Override

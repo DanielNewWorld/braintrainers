@@ -14,12 +14,6 @@
     <string name="home_txt_hello">Вітаю!</string>
     <string name="home_btn_start">Почати тренування</string>
 
-    <string name="training_txt_find_number">Знайди число</string>
-    <string name="training_txt_find_number_desc">Тренує:</string>
-    <string name="training_txt_find_number_desc_1">Довільна увага</string>
-    <string name="training_txt_find_number_desc_2">Концентрація та перемикання уваги</string>
-    <string name="training_txt_find_number_desc_3">Зорове сприйняття</string>
-    <string name="training_btn_start">Почати</string>
     <string name="training_txt_info">Знайдіть вказане число: </string>
     <string name="training_txt_info_end">Тренування закінчено</string>
     <string name="training_txt_answer_end">Вірних відповідей</string>
@@ -28,4 +22,19 @@
 
     <string name="back_txt">Натисніть ще раз, щоб вийти</string>
     <string name="Privacy">Політика конфіденційності</string>
+
+    //----0----
+    <string name="training_txt_desc">Тренує:</string>
+    <string name="training_btn_start">Почати</string>
+    <string name="training_btn_next">Наступна гра</string>
+    <string name="training_txt_name_1">Знайди число</string>
+    <string name="training_txt_name_2">Квітник</string>
+
+    //----function----
+    <string name="training_txt_desc_uvaga_dovilna">Довільна увага</string>
+    <string name="training_txt_desc_uvaga_concentration_switch">Концентрація та перемикання уваги</string>
+    <string name="training_txt_desc_zorove_sprijnattja">Зорове сприйняття</string>
+    <string name="training_txt_desc_uvaga_function">Функцію уваги</string>
+    <string name="training_txt_desc_obrazne_mislenja">Образне мислення</string>
+
 </resources>

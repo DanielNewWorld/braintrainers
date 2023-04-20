@@ -1,0 +1,74 @@
+package com.daniel.braintrainers.trainers;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.daniel.braintrainers.R;
+
+public class DescriptionTrainers extends AppCompatActivity {
+    TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3;
+    Button btnTrainingStart;
+    Intent intent, intentNext;
+    String switchTrainer;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.description_trainers);
+
+        btnTrainingStart = findViewById(R.id.training_btn_start);
+        txtNameTrainer = (TextView) findViewById(R.id.txtNameTrainers);
+        txtDesc1 = (TextView) findViewById(R.id.txt_trainer_decription_1);
+        txtDesc2 = (TextView) findViewById(R.id.txt_trainer_decription_2);
+        txtDesc3 = (TextView) findViewById(R.id.txt_trainer_decription_3);
+
+        intent = getIntent();
+        switchTrainer = intent.getStringExtra("numberTrainer");
+
+        View.OnClickListener onClickGo = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+
+                switch (switchTrainer) {
+                    case "1":
+                        intentNext = new Intent(context, FindNumberActivity1.class);
+                        context.startActivity(intentNext);
+                        break;
+
+                    case "2":
+                        intentNext = new Intent(context, KvitnykActivity2.class);
+                        context.startActivity(intentNext);
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }
+        };
+        btnTrainingStart.setOnClickListener(onClickGo);
+
+        switch (switchTrainer) {
+            case "2":
+                txtNameTrainer.setText(R.string.training_txt_name_2);
+                txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
+                txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
+                txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
+                btnTrainingStart.setText(R.string.training_btn_next);
+                break;
+
+            default:
+                break;
+        }
+
+    }
+}

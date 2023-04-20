@@ -83,5 +83,12 @@
             android:textSize="48dp"
             android:textStyle="bold"/>
 
+        <Button
+            android:id="@+id/btnNextTrainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/training_btn_next" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

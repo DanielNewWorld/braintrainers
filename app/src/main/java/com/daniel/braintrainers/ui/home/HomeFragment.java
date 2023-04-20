@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.daniel.braintrainers.DescriptionTrainers;
+import com.daniel.braintrainers.trainers.DescriptionTrainers;
 import com.daniel.braintrainers.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -39,6 +39,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, DescriptionTrainers.class);
+                intent.putExtra("numberTrainer", "1");
                 context.startActivity(intent);
             }
         };
