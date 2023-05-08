@@ -9,7 +9,7 @@
             android:icon="@android:drawable/ic_menu_view"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_trainers"
             android:icon="?android:attr/actionModeFindDrawable"
             android:title="@string/menu_trainers" />
         <item
@@ -18,7 +18,7 @@
             android:title="@string/menu_statistic" />
         <item
             android:id="@+id/nav_test"
-            android:icon="@android:drawable/checkbox_on_background"
+            android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_test" />
     </group>
 </menu>
