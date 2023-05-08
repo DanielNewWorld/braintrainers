@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daniel.braintrainers.R;
+import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class FindNumberActivity1 extends Activity {
 
     int level = 0;
     private static long back_pressed;
-    private List<ItemsClass> itemsClasses;
+    private List<ItemsClassTrainers> itemsClassTrainers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,7 @@ public class FindNumberActivity1 extends Activity {
         int x = 0;
         int z = 0;
         int count;
-        itemsClasses = new ArrayList<>();
+        itemsClassTrainers = new ArrayList<>();
         boolean booleanWIN = false;
         int rotation = 0;
 
@@ -128,12 +129,12 @@ public class FindNumberActivity1 extends Activity {
                 txtInfoNumber.setText(Integer.toString(x));
             }
                 else booleanWIN = false;
-            itemsClasses.add(new ItemsClass(Integer.toString(x), color[y], booleanWIN, rotation));
+            itemsClassTrainers.add(new ItemsClassTrainers(Integer.toString(x), color[y], booleanWIN, rotation));
         }
     }
 
     private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(itemsClasses);
+        RVAdapter adapter = new RVAdapter(itemsClassTrainers);
         rv.setAdapter(adapter);
     }
 
@@ -151,10 +152,10 @@ public class FindNumberActivity1 extends Activity {
             }
         }
 
-        List<ItemsClass> itemsClasses;
+        List<ItemsClassTrainers> itemsClassTrainers;
 
-        RVAdapter(List<ItemsClass> itemsClasses){
-            this.itemsClasses = itemsClasses;
+        RVAdapter(List<ItemsClassTrainers> itemsClassTrainers){
+            this.itemsClassTrainers = itemsClassTrainers;
         }
 
         @Override
@@ -171,14 +172,14 @@ public class FindNumberActivity1 extends Activity {
 
         @Override
         public void onBindViewHolder(PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
-            personViewHolder.personName.setText(itemsClasses.get(i).name);
+            personViewHolder.personName.setText(itemsClassTrainers.get(i).name);
 
-            if (level >= 2) {personViewHolder.personName.setRotation(itemsClasses.get(i).rotation);}
+            if (level >= 2) {personViewHolder.personName.setRotation(itemsClassTrainers.get(i).rotation);}
 
             if (level >= 4) {
-                personViewHolder.personName.setBackgroundColor(itemsClasses.get(i).color);
+                personViewHolder.personName.setBackgroundColor(itemsClassTrainers.get(i).color);
 
-                if (itemsClasses.get(i).color == Color.WHITE) {
+                if (itemsClassTrainers.get(i).color == Color.WHITE) {
                     personViewHolder.personName.setTextColor(Color.BLACK);}
                 else personViewHolder.personName.setTextColor(Color.WHITE);
             }
@@ -186,7 +187,7 @@ public class FindNumberActivity1 extends Activity {
             View.OnClickListener onClickGo = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (itemsClasses.get(i).booleanWIN == true) {
+                    if (itemsClassTrainers.get(i).booleanWIN == true) {
                         switch (level) {
                             case 0:
                                 neuron = neuron + 10;
@@ -235,7 +236,7 @@ public class FindNumberActivity1 extends Activity {
 
         @Override
         public int getItemCount() {
-            return itemsClasses.size();
+            return itemsClassTrainers.size();
         }
     }
 

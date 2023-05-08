@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.daniel.braintrainers.trainers.DescriptionTrainers;
 import com.daniel.braintrainers.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {

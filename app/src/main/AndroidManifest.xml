@@ -29,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".trainers.DescriptionTrainers"
+            android:name=".ui.home.DescriptionTrainers"
             android:label="@string/menu_home"
             android:theme="@style/Theme.BrainTrainers.NoActionBar" >
             <meta-data
@@ -38,7 +38,7 @@
         </activity>
 
         <activity android:name=".trainers.FindNumberActivity1"></activity>
-        <activity android:name=".trainers.TrainersEndActivity"></activity>
+        <activity android:name=".ui.home.TrainersEndActivity"></activity>
         <activity android:name=".trainers.KvitnykActivity2"></activity>
 
     </application>

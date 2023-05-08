@@ -1,4 +1,4 @@
-package com.daniel.braintrainers.trainers;
+package com.daniel.braintrainers.ui.home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daniel.braintrainers.R;
+import com.daniel.braintrainers.trainers.FindNumberActivity1;
+import com.daniel.braintrainers.trainers.KvitnykActivity2;
 
 public class DescriptionTrainers extends AppCompatActivity {
     TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;

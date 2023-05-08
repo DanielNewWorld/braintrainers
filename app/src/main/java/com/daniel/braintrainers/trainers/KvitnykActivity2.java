@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daniel.braintrainers.R;
+import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class KvitnykActivity2 extends Activity {
 
     int level = 0;
     private static long back_pressed;
-    private List<ItemsClass> itemsClasses;
+    private List<ItemsClassTrainers> itemsClassTrainers;
 
     boolean quest = false;
 
@@ -185,7 +186,7 @@ public class KvitnykActivity2 extends Activity {
                 "зелений","червоний", "пурпурний","жовтий"};
         int x1, y1, x2, y2 = 0;
         int count = 2;
-        itemsClasses = new ArrayList<>();
+        itemsClassTrainers = new ArrayList<>();
         boolean booleanWIN = false;
         int rotation = 0;
 
@@ -195,12 +196,12 @@ public class KvitnykActivity2 extends Activity {
             x1 = (int) (Math.random()*8);
             y1 = (int) (Math.random()*8);
             rotation = (int) (Math.random()*50 - 25);
-            itemsClasses.add(new ItemsClass(colorName[x1], color[y1], booleanWIN, rotation));
+            itemsClassTrainers.add(new ItemsClassTrainers(colorName[x1], color[y1], booleanWIN, rotation));
         //}
         x2 = (int) (Math.random()*8);
         y2 = (int) (Math.random()*8);
         rotation = (int) (Math.random()*50 - 25);
-        itemsClasses.add(new ItemsClass(colorName[x2], color[y2], booleanWIN, rotation));
+        itemsClassTrainers.add(new ItemsClassTrainers(colorName[x2], color[y2], booleanWIN, rotation));
 
         if (x1 == y2) {
             quest = true;
@@ -209,7 +210,7 @@ public class KvitnykActivity2 extends Activity {
     }
 
     private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(itemsClasses);
+        RVAdapter adapter = new RVAdapter(itemsClassTrainers);
         rv.setAdapter(adapter);
     }
 
@@ -227,10 +228,10 @@ public class KvitnykActivity2 extends Activity {
             }
         }
 
-        List<ItemsClass> itemsClasses;
+        List<ItemsClassTrainers> itemsClassTrainers;
 
-        RVAdapter(List<ItemsClass> itemsClasses){
-            this.itemsClasses = itemsClasses;
+        RVAdapter(List<ItemsClassTrainers> itemsClassTrainers){
+            this.itemsClassTrainers = itemsClassTrainers;
         }
 
         @Override
@@ -247,8 +248,8 @@ public class KvitnykActivity2 extends Activity {
 
         @Override
         public void onBindViewHolder(RVAdapter.PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
-            personViewHolder.personName.setText(itemsClasses.get(i).name);
-            personViewHolder.personName.setTextColor(itemsClasses.get(i).color);
+            personViewHolder.personName.setText(itemsClassTrainers.get(i).name);
+            personViewHolder.personName.setTextColor(itemsClassTrainers.get(i).color);
             personViewHolder.personName.setWidth(400);
             //personViewHolder.personName.setPadding(5, 20, 5, 20);
 
@@ -257,7 +258,7 @@ public class KvitnykActivity2 extends Activity {
 
         @Override
         public int getItemCount() {
-            return itemsClasses.size();
+            return itemsClassTrainers.size();
         }
     }
 

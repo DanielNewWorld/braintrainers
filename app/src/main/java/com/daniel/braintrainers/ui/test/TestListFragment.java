@@ -1,6 +1,5 @@
 package com.daniel.braintrainers.ui.test;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import com.daniel.braintrainers.R;
 
-public class TestFragment extends Fragment {
+public class TestListFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

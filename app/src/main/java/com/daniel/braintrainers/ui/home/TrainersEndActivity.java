@@ -1,10 +1,9 @@
-package com.daniel.braintrainers.trainers;
+package com.daniel.braintrainers.ui.home;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
+import com.daniel.braintrainers.ui.home.DescriptionTrainers;
 
 public class TrainersEndActivity extends Activity {
 

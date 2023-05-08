@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.daniel.braintrainers.databinding.FragmentSlideshowBinding;
+import com.daniel.braintrainers.databinding.FragmentStatisticBinding;
 
 public class StatisticFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentStatisticBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         StatisticViewModel statisticViewModel =
                 new ViewModelProvider(this).get(StatisticViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentStatisticBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;

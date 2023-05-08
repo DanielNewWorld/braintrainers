@@ -1,12 +1,12 @@
 package com.daniel.braintrainers.trainers;
 
-class ItemsClass {
+class ItemsClassTrainers {
     String name;
     int color;
     boolean booleanWIN;
     int rotation;
 
-    ItemsClass(String name, int color, boolean booleanWIN, int rotation) {
+    ItemsClassTrainers(String name, int color, boolean booleanWIN, int rotation) {
         this.name = name;
         this.color = color;
         this.booleanWIN = booleanWIN;
