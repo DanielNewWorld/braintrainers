@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Розвиток розуму</string>
+    <string name="app_name">Розвиток мета-навичок. Дивовижна гра життя</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Розвиток розуму</string>
@@ -8,8 +8,9 @@
     <string name="action_settings">Налаштування</string>
 
     <string name="menu_home">Тренування</string>
-    <string name="menu_gallery">Тренажери</string>
-    <string name="menu_slideshow">Статистика</string>
+    <string name="menu_trainers">Тренажери</string>
+    <string name="menu_statistic">Статистика</string>
+    <string name="menu_test">Тести</string>
 
     <string name="home_txt_hello">Вітаю!</string>
     <string name="home_btn_start">Почати тренування</string>
