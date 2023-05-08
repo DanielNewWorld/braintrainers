@@ -23,7 +23,7 @@ import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KvitnykActivity2 extends Activity {
+public class KvitnykActivity_2 extends Activity {
     private RecyclerView rv;
     TextView txtTime;
     Button btnYes, btnNo;
@@ -51,7 +51,7 @@ public class KvitnykActivity2 extends Activity {
         btnNo = (Button) findViewById(R.id.btn_no);
         btnYes = (Button) findViewById(R.id.btn_yes);
 
-        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity2.this, 1);
+        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity_2.this, 1);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
@@ -170,7 +170,7 @@ public class KvitnykActivity2 extends Activity {
 
         if (timeElapsed <= 1) {
             txtTime.setText("00:00");
-            Intent intent = new Intent(KvitnykActivity2.this, TrainersEndActivity.class);
+            Intent intent = new Intent(KvitnykActivity_2.this, TrainersEndActivity.class);
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));
@@ -182,15 +182,13 @@ public class KvitnykActivity2 extends Activity {
     public void initializeData(){
         int[] color  = new int[] {Color.BLACK,Color.BLUE,Color.CYAN,Color.GRAY,
                 Color.GREEN,Color.RED, Color.MAGENTA,Color.YELLOW};
-        String[] colorName  = new String[] {"чорний","блакитний","синій","сірий",
+        String[] colorName  = new String[] {"чорний","синій","блакитний","сірий",
                 "зелений","червоний", "пурпурний","жовтий"};
         int x1, y1, x2, y2 = 0;
         int count = 2;
         itemsClassTrainers = new ArrayList<>();
         boolean booleanWIN = false;
         int rotation = 0;
-
-        count = 2;
 
         //for (int i = 0; i < count; i++) {
             x1 = (int) (Math.random()*8);

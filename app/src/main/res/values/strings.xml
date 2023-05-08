@@ -46,4 +46,8 @@
     <string name="training_txt_desc_uvaga_function">Функцію уваги</string>
     <string name="training_txt_desc_obrazne_mislenja">Образне мислення</string>
 
+    //----test----
+    <string name="test_txt_desc">Виберіть тест</string>
+    <string name="test_1">Ви лідер чи менеджер?</string>
+
 </resources>

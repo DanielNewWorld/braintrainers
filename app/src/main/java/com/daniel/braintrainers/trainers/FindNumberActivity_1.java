@@ -22,7 +22,7 @@ import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindNumberActivity1 extends Activity {
+public class FindNumberActivity_1 extends Activity {
     private RecyclerView rv;
     TextView txtInfoNumber, txtTime;
     LinearLayout llPanel;
@@ -46,7 +46,7 @@ public class FindNumberActivity1 extends Activity {
         txtTime = (TextView) findViewById(R.id.txtTime);
         llPanel = (LinearLayout) findViewById(R.id.ll_panel_trainers);
 
-        GridLayoutManager llm = new GridLayoutManager(FindNumberActivity1.this, 3);
+        GridLayoutManager llm = new GridLayoutManager(FindNumberActivity_1.this, 3);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
@@ -67,7 +67,7 @@ public class FindNumberActivity1 extends Activity {
 
         if (timeElapsed <= 1) {
             txtTime.setText("00:00");
-            Intent intent = new Intent(FindNumberActivity1.this, TrainersEndActivity.class);
+            Intent intent = new Intent(FindNumberActivity_1.this, TrainersEndActivity.class);
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));

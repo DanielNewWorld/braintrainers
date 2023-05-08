@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daniel.braintrainers.R;
-import com.daniel.braintrainers.trainers.FindNumberActivity1;
-import com.daniel.braintrainers.trainers.KvitnykActivity2;
+import com.daniel.braintrainers.trainers.FindNumberActivity_1;
+import com.daniel.braintrainers.trainers.KvitnykActivity_2;
 
 public class DescriptionTrainers extends AppCompatActivity {
     TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;
@@ -43,12 +43,12 @@ public class DescriptionTrainers extends AppCompatActivity {
 
                 switch (switchTrainer) {
                     case "1":
-                        intentNext = new Intent(context, FindNumberActivity1.class);
+                        intentNext = new Intent(context, FindNumberActivity_1.class);
                         context.startActivity(intentNext);
                         break;
 
                     case "2":
-                        intentNext = new Intent(context, KvitnykActivity2.class);
+                        intentNext = new Intent(context, KvitnykActivity_2.class);
                         context.startActivity(intentNext);
                         break;
 
