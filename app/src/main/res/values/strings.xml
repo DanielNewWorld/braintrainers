@@ -31,20 +31,8 @@
     <string name="btn_yes">так</string>
     <string name="btn_no">ні</string>
 
-    //--quest--VVVV
-    <string name="training_txt_quest_1">Знайдіть вказане число</string>
-    <string name="training_txt_quest_2">Чи збігається назва кольору на верхній картці з кольором тексту на нижній картці?</string>
-
-    //----function----VVVV
-    <string name="training_txt_desc_uvaga_dovilna">Довільна увага</string>
-    <string name="training_txt_desc_uvaga_concentration_switch">Концентрація та перемикання уваги</string>
-    <string name="training_txt_desc_zorove_sprijnattja">Зорове сприйняття</string>
-    <string name="training_txt_desc_uvaga_function">Функцію уваги</string>
-    <string name="training_txt_desc_obrazne_mislenja">Образне мислення</string>
-
-    //----test list----VVVV
+    //----test list----
     <string name="test_txt_desc">Виберіть тест</string>
-    <string name="test_1">Ви лідер чи менеджер?</string>
 
     //----trainers list----
     <string name="trainers_txt_desc">Виберіть тренажер</string>
@@ -92,6 +80,26 @@
     <string-array name="trainers_name_array">
         <item>Знайди число</item>
         <item>Квітник</item>
+    </string-array>
+
+    //----test name----
+    <string-array name="test_name_array">
+        <item>Ви лідер чи менеджер?</item>
+    </string-array>
+
+    //--quest----
+    <string-array name="trainers_txt_quest_array">
+        <item>Знайдіть вказане число</item>
+        <item>Чи збігається назва кольору на верхній картці з кольором тексту на нижній картці?</item>
+    </string-array>
+
+    //----meta----
+    <string-array name="meta_array">
+        <item>Довільна увага</item>
+        <item>Концентрація та перемикання уваги</item>
+        <item>Зорове сприйняття</item>
+        <item>Функцію уваги</item>
+        <item>Образне мислення</item>
     </string-array>
 
 </resources>

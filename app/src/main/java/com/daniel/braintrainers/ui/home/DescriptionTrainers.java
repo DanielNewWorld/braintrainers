@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daniel.braintrainers.R;
-import com.daniel.braintrainers.trainers.FindNumberActivity_1;
-import com.daniel.braintrainers.trainers.KvitnykActivity_2;
+import com.daniel.braintrainers.trainers.FindNumberActivity_0;
+import com.daniel.braintrainers.trainers.KvitnykActivity_1;
 
 public class DescriptionTrainers extends AppCompatActivity {
     TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;
@@ -43,12 +43,12 @@ public class DescriptionTrainers extends AppCompatActivity {
                 Context context = v.getContext();
                 switch (switchTrainer) {
                     case "1":
-                        intentNext = new Intent(context, FindNumberActivity_1.class);
+                        intentNext = new Intent(context, FindNumberActivity_0.class);
                         context.startActivity(intentNext);
                         break;
 
                     case "2":
-                        intentNext = new Intent(context, KvitnykActivity_2.class);
+                        intentNext = new Intent(context, KvitnykActivity_1.class);
                         context.startActivity(intentNext);
                         break;
 
@@ -61,21 +61,24 @@ public class DescriptionTrainers extends AppCompatActivity {
         btnTrainingStart.setOnClickListener(onClickGo);
 
         String []trainers_name = getResources().getStringArray(R.array.trainers_name_array);
+        String []trainers_quest = getResources().getStringArray(R.array.trainers_txt_quest_array);
+        String []meta = getResources().getStringArray(R.array.meta_array);
+
         switch (switchTrainer) {
             case "1":
                 txtNameTrainer.setText(trainers_name[0]);
-                //txtQuest.setText(R.string.training_txt_quest_2);
-                //txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
-                //txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
-                //txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
+                txtQuest.setText(trainers_quest[0]);
+                txtDesc1.setText(meta[0]);
+                txtDesc2.setText(meta[1]);
+                txtDesc3.setText(meta[2]);
                 //btnTrainingStart.setText(R.string.training_btn_start);
                 break;
             case "2":
                 txtNameTrainer.setText(trainers_name[1]);
-                txtQuest.setText(R.string.training_txt_quest_2);
-                txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
-                txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
-                txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
+                txtQuest.setText(trainers_quest[1]);
+                txtDesc1.setText(meta[3]);
+                txtDesc2.setText(meta[2]);
+                txtDesc3.setText(meta[4]);
                 btnTrainingStart.setText(R.string.training_btn_start);
                 break;
 

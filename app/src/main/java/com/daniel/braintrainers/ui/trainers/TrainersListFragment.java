@@ -3,7 +3,6 @@ package com.daniel.braintrainers.ui.trainers;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.databinding.FragmentTrainersListBinding;
-import com.daniel.braintrainers.trainers.FindNumberActivity_1;
-import com.daniel.braintrainers.trainers.KvitnykActivity_2;
+import com.daniel.braintrainers.trainers.FindNumberActivity_0;
+import com.daniel.braintrainers.trainers.KvitnykActivity_1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,12 +127,12 @@ public class TrainersListFragment extends Fragment {
 
                     switch (itemsClassTrainersList.get(i).id) {
                         case 1:
-                            intent = new Intent(context, FindNumberActivity_1.class);
+                            intent = new Intent(context, FindNumberActivity_0.class);
                             context.startActivity(intent);
                             break;
 
                         case 2:
-                            intent = new Intent(context, KvitnykActivity_2.class);
+                            intent = new Intent(context, KvitnykActivity_1.class);
                             context.startActivity(intent);
                             break;
 

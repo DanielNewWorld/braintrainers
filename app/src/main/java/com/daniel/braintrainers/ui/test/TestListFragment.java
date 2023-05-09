@@ -16,9 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daniel.braintrainers.R;
-import com.daniel.braintrainers.test.Test_lider_Activity_1;
-import com.daniel.braintrainers.trainers.FindNumberActivity_1;
-import com.daniel.braintrainers.trainers.KvitnykActivity_2;
+import com.daniel.braintrainers.test.Test_lider_Activity_0;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +48,9 @@ public class TestListFragment extends Fragment {
 
     public void initializeData(){
         itemsClassTestList = new ArrayList<>();
+        String []test_name = getResources().getStringArray(R.array.test_name_array);
 
-        itemsClassTestList.add(new ItemsClassTestList(getString(R.string.test_1),
+        itemsClassTestList.add(new ItemsClassTestList(test_name[0],
                 0, 1));
     }
 
@@ -105,7 +104,7 @@ public class TestListFragment extends Fragment {
 
                     switch (itemsClassTestList.get(i).id) {
                         case 1:
-                            intent = new Intent(context, Test_lider_Activity_1.class);
+                            intent = new Intent(context, Test_lider_Activity_0.class);
                             context.startActivity(intent);
                             break;
 

@@ -23,9 +23,9 @@ import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KvitnykActivity_2 extends Activity {
+public class KvitnykActivity_1 extends Activity {
     private RecyclerView rv;
-    TextView txtTime;
+    TextView txtTime, txtQuest;
     Button btnYes, btnNo;
     LinearLayout llPanel;
     final long startTime = System.nanoTime();
@@ -47,13 +47,17 @@ public class KvitnykActivity_2 extends Activity {
 
         rv=(RecyclerView)findViewById(R.id.rv);
         txtTime = (TextView) findViewById(R.id.txtTime);
+        txtQuest = (TextView) findViewById(R.id.txtQuestion);
         llPanel = (LinearLayout) findViewById(R.id.ll_panel_trainers);
         btnNo = (Button) findViewById(R.id.btn_no);
         btnYes = (Button) findViewById(R.id.btn_yes);
 
-        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity_2.this, 1);
+        GridLayoutManager llm = new GridLayoutManager(KvitnykActivity_1.this, 1);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
+
+        String []trainers_quest = getResources().getStringArray(R.array.trainers_txt_quest_array);
+        txtQuest.setText(trainers_quest[1]);
 
         View.OnClickListener onClickYes = new View.OnClickListener() {
             @Override
@@ -170,7 +174,7 @@ public class KvitnykActivity_2 extends Activity {
 
         if (timeElapsed <= 1) {
             txtTime.setText("00:00");
-            Intent intent = new Intent(KvitnykActivity_2.this, TrainersEndActivity.class);
+            Intent intent = new Intent(KvitnykActivity_1.this, TrainersEndActivity.class);
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));

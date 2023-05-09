@@ -22,9 +22,9 @@ import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindNumberActivity_1 extends Activity {
+public class FindNumberActivity_0 extends Activity {
     private RecyclerView rv;
-    TextView txtInfoNumber, txtTime;
+    TextView txtInfoNumber, txtTime, txtQuest;
     LinearLayout llPanel;
     final long startTime = System.nanoTime();
 
@@ -44,9 +44,13 @@ public class FindNumberActivity_1 extends Activity {
         rv=(RecyclerView)findViewById(R.id.rv);
         txtInfoNumber = (TextView) findViewById(R.id.txt_info_number);
         txtTime = (TextView) findViewById(R.id.txtTime);
+        txtQuest = (TextView) findViewById(R.id.txtQuestion);
         llPanel = (LinearLayout) findViewById(R.id.ll_panel_trainers);
 
-        GridLayoutManager llm = new GridLayoutManager(FindNumberActivity_1.this, 3);
+        String []trainers_quest = getResources().getStringArray(R.array.trainers_txt_quest_array);
+        txtQuest.setText(trainers_quest[0]);
+
+        GridLayoutManager llm = new GridLayoutManager(FindNumberActivity_0.this, 3);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
@@ -67,7 +71,7 @@ public class FindNumberActivity_1 extends Activity {
 
         if (timeElapsed <= 1) {
             txtTime.setText("00:00");
-            Intent intent = new Intent(FindNumberActivity_1.this, TrainersEndActivity.class);
+            Intent intent = new Intent(FindNumberActivity_0.this, TrainersEndActivity.class);
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));

@@ -17,9 +17,10 @@ import com.daniel.braintrainers.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test_lider_Activity_1 extends Activity {
+public class Test_lider_Activity_0 extends Activity {
     private RecyclerView rv_test;
     private List<ItemsClassTest> itemsClassTest;
+    TextView txtQuest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,10 @@ public class Test_lider_Activity_1 extends Activity {
         setContentView(R.layout.test_chekbox_lider_activity);
 
         rv_test = (RecyclerView) findViewById(R.id.rv_test);
+        txtQuest = (TextView) findViewById(R.id.txtQuestion);
+
+        String []test_quest = getResources().getStringArray(R.array.test_name_array);
+        txtQuest.setText(test_quest[0]);
 
         GridLayoutManager llm = new GridLayoutManager(this, 1);
         rv_test.setLayoutManager(llm);
