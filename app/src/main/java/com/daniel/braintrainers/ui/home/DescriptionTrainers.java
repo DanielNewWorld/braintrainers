@@ -60,9 +60,18 @@ public class DescriptionTrainers extends AppCompatActivity {
         };
         btnTrainingStart.setOnClickListener(onClickGo);
 
+        String []trainers_name = getResources().getStringArray(R.array.trainers_name_array);
         switch (switchTrainer) {
+            case "1":
+                txtNameTrainer.setText(trainers_name[0]);
+                //txtQuest.setText(R.string.training_txt_quest_2);
+                //txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
+                //txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
+                //txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
+                //btnTrainingStart.setText(R.string.training_btn_start);
+                break;
             case "2":
-                txtNameTrainer.setText(R.string.training_txt_name_2);
+                txtNameTrainer.setText(trainers_name[1]);
                 txtQuest.setText(R.string.training_txt_quest_2);
                 txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
                 txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);

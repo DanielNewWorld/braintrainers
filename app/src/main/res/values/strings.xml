@@ -2,7 +2,6 @@
     <string name="app_name">Розвиток мета-навичок. Дивовижна гра життя</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Розвиток мета-навичок. Дивовижна гра життя</string>
     <string name="nav_header_subtitle">daniel.new.world@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Налаштування</string>
@@ -29,23 +28,21 @@
     //----Trainers---
     <string name="training_txt_desc">Тренує:</string>
     <string name="training_btn_start">Далі</string>
-    <string name="training_txt_name_1">Знайди число</string>
-    <string name="training_txt_name_2">Квітник</string>
     <string name="btn_yes">так</string>
     <string name="btn_no">ні</string>
 
-    //--quest--
+    //--quest--VVVV
     <string name="training_txt_quest_1">Знайдіть вказане число</string>
     <string name="training_txt_quest_2">Чи збігається назва кольору на верхній картці з кольором тексту на нижній картці?</string>
 
-    //----function----
+    //----function----VVVV
     <string name="training_txt_desc_uvaga_dovilna">Довільна увага</string>
     <string name="training_txt_desc_uvaga_concentration_switch">Концентрація та перемикання уваги</string>
     <string name="training_txt_desc_zorove_sprijnattja">Зорове сприйняття</string>
     <string name="training_txt_desc_uvaga_function">Функцію уваги</string>
     <string name="training_txt_desc_obrazne_mislenja">Образне мислення</string>
 
-    //----test list----
+    //----test list----VVVV
     <string name="test_txt_desc">Виберіть тест</string>
     <string name="test_1">Ви лідер чи менеджер?</string>
 
@@ -89,6 +86,12 @@
         <item>червоний</item>
         <item>пурпурний</item>
         <item>жовтий</item>
+    </string-array>
+
+    //---trainers name----
+    <string-array name="trainers_name_array">
+        <item>Знайди число</item>
+        <item>Квітник</item>
     </string-array>
 
 </resources>

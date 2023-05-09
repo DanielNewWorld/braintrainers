@@ -63,11 +63,13 @@ public class TrainersListFragment extends Fragment {
 
     public void initializeData(){
         itemsClassTrainersList = new ArrayList<>();
+        String []trainers_name = getResources().getStringArray(R.array.trainers_name_array);
+        int []img_res = {R.drawable.find_number_1, R.drawable.kvitnyk_2};
 
-        itemsClassTrainersList.add(new ItemsClassTrainersList(getString(R.string.training_txt_name_1),
-                0, R.drawable.find_number_1, 1));
-        itemsClassTrainersList.add(new ItemsClassTrainersList(getString(R.string.training_txt_name_2),
-                0, R.drawable.kvitnyk_2, 2));
+        for (int i = 0; i < trainers_name.length; i++) {
+            itemsClassTrainersList.add(new ItemsClassTrainersList(trainers_name[i],
+                    0, img_res[i], i+1));
+        }
     }
 
     private void initializeAdapter(){
