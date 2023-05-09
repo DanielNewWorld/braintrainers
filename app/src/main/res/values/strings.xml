@@ -53,9 +53,42 @@
     <string name="trainers_txt_desc">Виберіть тренажер</string>
 
     //---test lider----
-    <string-array name="test_lider_array">
-        <item>Earth</item>
-        <item>Mars</item>
+    <string-array name="test_lider_array_1">
+        <item>Концентруватись на завданні, щоб його виконати</item>
+        <item>Формувати власну думку, слухаючи інших</item>
+        <item>Уникати ризику чи мінімізувати його</item>
+        <item>З нетерпінням чекати необхідного прогресу</item>
+        <item>Більше концентруватись на завданні</item>
+        <item>Хвилюватись  про те, що ще потрібно зробити</item>
+        <item>Не показувати хвилювання  через завдання</item>
+        <item>Надіятись на вдачу</item>
+        <item>Залишати свою думку при собі</item>
+        <item>Часто дивувати людей</item>
+    </string-array>
+
+    <string-array name="test_lider_array_2">
+        <item>Дізнаватись, чи вірне завдання</item>
+        <item>Вислуховувати різні думки, а потім з них вибрати найбільш, на ваш  погляд, вірне</item>
+        <item>Любити ризик</item>
+        <item>Поступово йти до поставленої цілі</item>
+        <item>Більше концентруватись  на взаємовідносинах з колегами</item>
+        <item>Гордитись тим, що вже досягнуто</item>
+        <item>Демонструвати своє хвилювання  з приводу завдання</item>
+        <item>Будувати плани, які можна контролювати</item>
+        <item>Витрачати багато часу на те, щоб схилити людей до своєї точки зору</item>
+        <item>Рідко дивувати людей</item>
+    </string-array>
+
+    //---color name----
+    <string-array name="color_name_array">
+        <item>чорний</item>
+        <item>синій</item>
+        <item>блакитний</item>
+        <item>сірий</item>
+        <item>зелений</item>
+        <item>червоний</item>
+        <item>пурпурний</item>
+        <item>жовтий</item>
     </string-array>
 
 </resources>

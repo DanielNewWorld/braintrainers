@@ -60,11 +60,12 @@ public class Test_lider_Activity_1 extends Activity {
 
     public void initializeData(){
         itemsClassTest = new ArrayList<>();
-        String []questions = getResources().getStringArray(R.array.test_lider_array);
-        int count = questions.length;
+        String []questions_1 = getResources().getStringArray(R.array.test_lider_array_1);
+        String []questions_2 = getResources().getStringArray(R.array.test_lider_array_2);
+        int count = questions_1.length;
 
         for (int i = 0; i < count; i++) {
-            itemsClassTest.add(new ItemsClassTest(questions[i], 0, i+1));
+            itemsClassTest.add(new ItemsClassTest(questions_1[i], questions_2[i], 0, i+1));
         }
     }
 
@@ -78,12 +79,13 @@ public class Test_lider_Activity_1 extends Activity {
         public class PersonViewHolder extends RecyclerView.ViewHolder {
 
             CardView cv;
-            TextView personName;
+            TextView personName_1, personName_2;
 
             PersonViewHolder(View itemView) {
                 super(itemView);
                 cv = (CardView)itemView.findViewById(R.id.cv);
-                personName = (TextView)itemView.findViewById(R.id.person_name);
+                personName_1 = (TextView)itemView.findViewById(R.id.person_name_1);
+                personName_2 = (TextView)itemView.findViewById(R.id.person_name_2);
             }
         }
 
@@ -100,22 +102,15 @@ public class Test_lider_Activity_1 extends Activity {
 
         @Override
         public RVAdapter.PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item, viewGroup, false);
+            View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_chekbox, viewGroup, false);
             RVAdapter.PersonViewHolder pvh = new RVAdapter.PersonViewHolder(v);
             return pvh;
         }
 
         @Override
         public void onBindViewHolder(RVAdapter.PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
-            personViewHolder.personName.setText(itemsClassTest.get(i).name);
-
-            View.OnClickListener onClickGo = new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            };
-            personViewHolder.personName.setOnClickListener(onClickGo);
+            personViewHolder.personName_1.setText(itemsClassTest.get(i).name_1);
+            personViewHolder.personName_2.setText(itemsClassTest.get(i).name_2);
         }
 
         @Override

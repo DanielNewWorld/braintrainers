@@ -67,7 +67,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc1.setText(R.string.training_txt_desc_uvaga_function);
                 txtDesc2.setText(R.string.training_txt_desc_zorove_sprijnattja);
                 txtDesc3.setText(R.string.training_txt_desc_obrazne_mislenja);
-                btnTrainingStart.setText(R.string.training_btn_next);
+                btnTrainingStart.setText(R.string.training_btn_start);
                 break;
 
             default:

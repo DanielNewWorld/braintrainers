@@ -182,8 +182,9 @@ public class KvitnykActivity_2 extends Activity {
     public void initializeData(){
         int[] color  = new int[] {Color.BLACK,Color.BLUE,Color.CYAN,Color.GRAY,
                 Color.GREEN,Color.RED, Color.MAGENTA,Color.YELLOW};
-        String[] colorName  = new String[] {"чорний","синій","блакитний","сірий",
-                "зелений","червоний", "пурпурний","жовтий"};
+        //String[] colorName  = new String[] {"чорний","синій","блакитний","сірий",
+        //        "зелений","червоний", "пурпурний","жовтий"};
+        String[] colorName = getResources().getStringArray(R.array.color_name_array);
         int x1, y1, x2, y2 = 0;
         int count = 2;
         itemsClassTrainers = new ArrayList<>();
@@ -191,13 +192,13 @@ public class KvitnykActivity_2 extends Activity {
         int rotation = 0;
 
         //for (int i = 0; i < count; i++) {
-            x1 = (int) (Math.random()*8);
-            y1 = (int) (Math.random()*8);
+            x1 = (int) (Math.random()*colorName.length);
+            y1 = (int) (Math.random()*colorName.length);
             rotation = (int) (Math.random()*50 - 25);
             itemsClassTrainers.add(new ItemsClassTrainers(colorName[x1], color[y1], booleanWIN, rotation));
         //}
-        x2 = (int) (Math.random()*8);
-        y2 = (int) (Math.random()*8);
+        x2 = (int) (Math.random()*colorName.length);
+        y2 = (int) (Math.random()*colorName.length);
         rotation = (int) (Math.random()*50 - 25);
         itemsClassTrainers.add(new ItemsClassTrainers(colorName[x2], color[y2], booleanWIN, rotation));
 

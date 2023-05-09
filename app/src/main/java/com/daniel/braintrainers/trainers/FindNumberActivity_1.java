@@ -122,7 +122,7 @@ public class FindNumberActivity_1 extends Activity {
 
         for (int i = 0; i < count; i++) {
             x = (int) (2000 + Math.random()*4000);
-            y = (int) (Math.random()*11);
+            y = (int) (Math.random()*color.length);
             rotation = (int) (Math.random()*50 - 25);
             if (i == z) {
                 booleanWIN = true;

@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:text="@string/training_btn_next" />
+            android:text="@string/training_btn_start" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
