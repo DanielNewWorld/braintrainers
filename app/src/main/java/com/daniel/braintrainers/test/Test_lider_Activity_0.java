@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -62,13 +63,13 @@ public class Test_lider_Activity_0 extends Activity {
         public class PersonViewHolder extends RecyclerView.ViewHolder {
 
             CardView cv;
-            TextView personName_1, personName_2;
+            RadioButton personName_1, personName_2;
 
             PersonViewHolder(View itemView) {
                 super(itemView);
                 cv = (CardView)itemView.findViewById(R.id.cv);
-                personName_1 = (TextView)itemView.findViewById(R.id.person_name_1);
-                personName_2 = (TextView)itemView.findViewById(R.id.person_name_2);
+                personName_1 = (RadioButton) itemView.findViewById(R.id.radioBtn1);
+                personName_2 = (RadioButton) itemView.findViewById(R.id.radioBtn2);
             }
         }
 
