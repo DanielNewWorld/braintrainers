@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/training_txt_quest_2"
                 android:textColor="#9C27B0"
+                android:gravity="center"
                 android:textSize="24dp"
                 android:textStyle="bold" />
         </LinearLayout>

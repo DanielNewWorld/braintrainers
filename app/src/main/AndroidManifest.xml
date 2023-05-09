@@ -40,6 +40,7 @@
         <activity android:name=".trainers.FindNumberActivity_1"></activity>
         <activity android:name=".ui.home.TrainersEndActivity"></activity>
         <activity android:name=".trainers.KvitnykActivity_2"></activity>
+        <activity android:name=".test.Test_lider_Activity_1"></activity>
 
     </application>
 

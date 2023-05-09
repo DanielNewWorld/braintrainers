@@ -1,11 +1,11 @@
-package com.daniel.braintrainers.ui.test;
+package com.daniel.braintrainers.test;
 
-class ItemsClassTestList {
+class ItemsClassTest {
     String name;
     int color;
     int id;
 
-    ItemsClassTestList(String name, int color, int id) {
+    ItemsClassTest(String name, int color, int id) {
         this.name = name;
         this.color = color;
         this.id = id;

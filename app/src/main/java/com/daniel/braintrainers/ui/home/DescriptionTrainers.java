@@ -39,8 +39,8 @@ public class DescriptionTrainers extends AppCompatActivity {
         View.OnClickListener onClickGo = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = v.getContext();
 
+                Context context = v.getContext();
                 switch (switchTrainer) {
                     case "1":
                         intentNext = new Intent(context, FindNumberActivity_1.class);

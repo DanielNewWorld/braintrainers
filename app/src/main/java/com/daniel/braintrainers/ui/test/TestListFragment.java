@@ -1,6 +1,8 @@
 package com.daniel.braintrainers.ui.test;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daniel.braintrainers.R;
+import com.daniel.braintrainers.test.Test_lider_Activity_1;
+import com.daniel.braintrainers.trainers.FindNumberActivity_1;
+import com.daniel.braintrainers.trainers.KvitnykActivity_2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +35,7 @@ public class TestListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_test_list, container, false);
+
         rvTestList = (RecyclerView) rootView.findViewById(R.id.rv_test_list);
 
         GridLayoutManager llm = new GridLayoutManager(rootView.getContext(), 1);
@@ -43,11 +49,10 @@ public class TestListFragment extends Fragment {
     }
 
     public void initializeData(){
-        int count = 1;
-        boolean booleanWIN = false;
         itemsClassTestList = new ArrayList<>();
 
-        itemsClassTestList.add(new ItemsClassTestList(getString(R.string.test_1), 0, booleanWIN));
+        itemsClassTestList.add(new ItemsClassTestList(getString(R.string.test_1),
+                0, 1));
     }
 
     private void initializeAdapter(){
@@ -90,6 +95,29 @@ public class TestListFragment extends Fragment {
         @Override
         public void onBindViewHolder(RVAdapter.PersonViewHolder personViewHolder, @SuppressLint("RecyclerView") int i) {
             personViewHolder.personName.setText(itemsClassTestList.get(i).name);
+
+            View.OnClickListener onClickGo = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Context context = v.getContext();
+                    Intent intent;
+
+                    switch (itemsClassTestList.get(i).id) {
+                        case 1:
+                            intent = new Intent(context, Test_lider_Activity_1.class);
+                            context.startActivity(intent);
+                            break;
+
+                        case 2:
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            };
+            personViewHolder.personName.setOnClickListener(onClickGo);
         }
 
         @Override
