@@ -13,6 +13,8 @@
 
     <string name="home_txt_hello">Вітаю!</string>
     <string name="home_btn_start">Почати тренування</string>
+    <string name="test_txt_quest">Виберіть одне твердження, найбільш характерне для Вашої поведінки</string>
+    <string name="test_message_select">Виберіть одне твердження</string>
 
     //--end description--
     <string name="training_txt_info_end">Тренування закінчено</string>
@@ -20,14 +22,15 @@
     <string name="training_txt_neuron_end">Створено нейронів</string>
     <string name="training_txt_results_end">Ваші результати</string>
     <string name="training_btn_end">Закінчити тренування</string>
+    <string name="test_btn_end">Закінчити тестування</string>
 
     //---
-    <string name="back_txt">Натисніть ще раз, щоб вийти</string>
+    <string name="back_message">Натисніть ще раз, щоб вийти</string>
     <string name="Privacy">Політика конфіденційності</string>
 
     //----Trainers---
     <string name="training_txt_desc">Тренує:</string>
-    <string name="training_btn_start">Далі</string>
+    <string name="btn_next">Далі</string>
     <string name="btn_yes">так</string>
     <string name="btn_no">ні</string>
 
@@ -100,6 +103,13 @@
         <item>Зорове сприйняття</item>
         <item>Функцію уваги</item>
         <item>Образне мислення</item>
+    </string-array>
+
+    //----test lider 1----
+    <string-array name="test_lider_answer_array">
+        <item>Ви відчуваєте себе комфортно на місці лідера і, можливо,  вам не подобаються деякі обов’язки в ролі менеджера. Переконайтеся в тому, що можете управляти людьми або довірити це комусь іншому, так як постійні обов`язки менеджера так само важливі, як і ефективне лідерство.</item>
+        <item>У вас є схильність до лідерства, але вам необхідно тренуватися і боротися зі своїми недоліками.</item>
+        <item>Ви віддаєте перевагу бути менеджером, а не лідером, і, ймовірно, в багатьох випадках чекаєте від інших лідерських вчинків, а самі концентруєтесь на вирішенні завдань і управлінні процесами роботи.</item>
     </string-array>
 
 </resources>

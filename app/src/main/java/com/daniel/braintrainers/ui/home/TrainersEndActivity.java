@@ -96,7 +96,7 @@ public class TrainersEndActivity extends Activity {
             System.exit(0);
         }
         else
-            Toast.makeText(getBaseContext(), R.string.back_txt,
+            Toast.makeText(getBaseContext(), R.string.back_message,
                     Toast.LENGTH_SHORT).show();
         back_pressed = System.currentTimeMillis();
     }

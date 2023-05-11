@@ -41,6 +41,7 @@
         <activity android:name=".ui.home.TrainersEndActivity"></activity>
         <activity android:name=".trainers.KvitnykActivity_1"></activity>
         <activity android:name=".test.Test_lider_Activity_0"></activity>
+        <activity android:name=".test.TestEndActivity"></activity>
 
     </application>
 

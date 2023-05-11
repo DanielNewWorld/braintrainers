@@ -76,7 +76,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc1.setText(meta[0]);
                 txtDesc2.setText(meta[1]);
                 txtDesc3.setText(meta[2]);
-                btnTrainingStart.setText(R.string.training_btn_start);
+                btnTrainingStart.setText(R.string.btn_next);
                 break;
             case "2":
                 txtNameTrainer.setText(trainers_name[1]);
@@ -84,7 +84,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc1.setText(meta[3]);
                 txtDesc2.setText(meta[2]);
                 txtDesc3.setText(meta[4]);
-                btnTrainingStart.setText(R.string.training_btn_start);
+                btnTrainingStart.setText(R.string.btn_next);
                 break;
 
             default:
