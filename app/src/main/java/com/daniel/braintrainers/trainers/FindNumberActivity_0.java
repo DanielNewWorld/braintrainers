@@ -36,6 +36,8 @@ public class FindNumberActivity_0 extends Activity {
     private static long back_pressed;
     private List<ItemsClassTrainers> itemsClassTrainers;
 
+    String switchTrainer, dad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,10 @@ public class FindNumberActivity_0 extends Activity {
         initializeAdapter();
 
         timeCount();
+
+        Intent intent = getIntent();
+        switchTrainer = intent.getStringExtra("numberTrainer");
+        dad = intent.getStringExtra("dad");
     }
 
     public void timeCount(){
@@ -75,7 +81,8 @@ public class FindNumberActivity_0 extends Activity {
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));
-            intent.putExtra("numberTrainer", "1");
+            intent.putExtra("numberTrainer", switchTrainer);
+            intent.putExtra("dad", dad);
             startActivity(intent);
         }
     }

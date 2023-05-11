@@ -21,6 +21,8 @@ import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.databinding.FragmentTrainersListBinding;
 import com.daniel.braintrainers.trainers.FindNumberActivity_0;
 import com.daniel.braintrainers.trainers.KvitnykActivity_1;
+import com.daniel.braintrainers.ui.home.DescriptionTrainers;
+import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -127,12 +129,16 @@ public class TrainersListFragment extends Fragment {
 
                     switch (itemsClassTrainersList.get(i).id) {
                         case 1:
-                            intent = new Intent(context, FindNumberActivity_0.class);
+                            intent = new Intent(context, DescriptionTrainers.class);
+                            intent.putExtra("numberTrainer", "1");
+                            intent.putExtra("dad", "TrainerList");
                             context.startActivity(intent);
                             break;
 
                         case 2:
-                            intent = new Intent(context, KvitnykActivity_1.class);
+                            intent = new Intent(context, DescriptionTrainers.class);
+                            intent.putExtra("numberTrainer", "2");
+                            intent.putExtra("dad", "TrainerList");
                             context.startActivity(intent);
                             break;
 

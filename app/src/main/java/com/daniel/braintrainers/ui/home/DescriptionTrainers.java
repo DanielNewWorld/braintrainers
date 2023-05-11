@@ -17,8 +17,8 @@ import com.daniel.braintrainers.trainers.KvitnykActivity_1;
 public class DescriptionTrainers extends AppCompatActivity {
     TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;
     Button btnTrainingStart;
-    Intent intent, intentNext;
-    String switchTrainer;
+    Intent intent;
+    String switchTrainer, dad;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,6 +35,7 @@ public class DescriptionTrainers extends AppCompatActivity {
 
         intent = getIntent();
         switchTrainer = intent.getStringExtra("numberTrainer");
+        dad = intent.getStringExtra("dad");
 
         View.OnClickListener onClickGo = new View.OnClickListener() {
             @Override
@@ -43,13 +44,17 @@ public class DescriptionTrainers extends AppCompatActivity {
                 Context context = v.getContext();
                 switch (switchTrainer) {
                     case "1":
-                        intentNext = new Intent(context, FindNumberActivity_0.class);
-                        context.startActivity(intentNext);
+                        intent = new Intent(context, FindNumberActivity_0.class);
+                        intent.putExtra("numberTrainer", switchTrainer);
+                        intent.putExtra("dad", dad);
+                        context.startActivity(intent);
                         break;
 
                     case "2":
-                        intentNext = new Intent(context, KvitnykActivity_1.class);
-                        context.startActivity(intentNext);
+                        intent = new Intent(context, KvitnykActivity_1.class);
+                        intent.putExtra("numberTrainer", switchTrainer);
+                        intent.putExtra("dad", dad);
+                        context.startActivity(intent);
                         break;
 
                     default:
@@ -71,7 +76,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc1.setText(meta[0]);
                 txtDesc2.setText(meta[1]);
                 txtDesc3.setText(meta[2]);
-                //btnTrainingStart.setText(R.string.training_btn_start);
+                btnTrainingStart.setText(R.string.training_btn_start);
                 break;
             case "2":
                 txtNameTrainer.setText(trainers_name[1]);

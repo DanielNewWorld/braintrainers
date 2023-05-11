@@ -39,6 +39,7 @@ public class HomeFragment extends Fragment {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, DescriptionTrainers.class);
                 intent.putExtra("numberTrainer", "1");
+                intent.putExtra("dad", "home");
                 context.startActivity(intent);
             }
         };

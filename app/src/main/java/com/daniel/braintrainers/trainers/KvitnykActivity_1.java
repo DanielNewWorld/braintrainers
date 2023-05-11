@@ -39,6 +39,7 @@ public class KvitnykActivity_1 extends Activity {
     private List<ItemsClassTrainers> itemsClassTrainers;
 
     boolean quest = false;
+    String switchTrainer, dad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,6 +162,10 @@ public class KvitnykActivity_1 extends Activity {
         initializeAdapter();
 
         timeCount();
+
+        Intent intent = getIntent();
+        switchTrainer = intent.getStringExtra("numberTrainer");
+        dad = intent.getStringExtra("dad");
     }
 
     public void timeCount(){
@@ -178,7 +183,8 @@ public class KvitnykActivity_1 extends Activity {
             intent.putExtra("maxCountTrueAnswer", Integer.toString(maxCountTrueAnswer));
             intent.putExtra("countTrainerItem", Integer.toString(countTrainerItem));
             intent.putExtra("neuron", Integer.toString(neuron));
-            intent.putExtra("numberTrainer", "2");
+            intent.putExtra("numberTrainer", switchTrainer);
+            intent.putExtra("dad", dad);
             startActivity(intent);
         }
     }

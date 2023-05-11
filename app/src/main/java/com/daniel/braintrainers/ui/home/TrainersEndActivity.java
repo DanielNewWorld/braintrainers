@@ -13,14 +13,15 @@ import android.widget.Toast;
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.ui.home.DescriptionTrainers;
+import com.daniel.braintrainers.ui.trainers.TrainersListFragment;
 
 public class TrainersEndActivity extends Activity {
 
     private static long back_pressed;
     TextView txtNeuron, txtAnswer, txtEnd;
     Button btnNextTrainer;
+    String switchTrainer, dad;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,14 @@ public class TrainersEndActivity extends Activity {
         txtAnswer.setText(intent.getStringExtra("maxCountTrueAnswer") + " з " +
                 intent.getStringExtra("countTrainerItem"));
         txtNeuron.setText(intent.getStringExtra("neuron"));
-        String switchTrainer = intent.getStringExtra("numberTrainer");
+
+        switchTrainer = intent.getStringExtra("numberTrainer");
+        dad = intent.getStringExtra("dad");
+
+        if (dad.equals("TrainerList")) {
+            btnNextTrainer.setText(R.string.training_btn_end);
+            txtEnd.setText(R.string.training_txt_info_end);
+        }
 
         switch (switchTrainer) {
             case "2":
@@ -53,17 +61,24 @@ public class TrainersEndActivity extends Activity {
                 Context context = v.getContext();
                 Intent intent;
 
-                switch (switchTrainer) {
-                    case "2":
-                        intent = new Intent(context, MainActivity.class);
-                        context.startActivity(intent);
-                        break;
+                if (dad.equals("TrainerList")) {
+                    intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
+                }
+                else {
+                    switch (switchTrainer) {
+                        case "2":
+                            intent = new Intent(context, MainActivity.class);
+                            context.startActivity(intent);
+                            break;
 
-                    default:
-                        intent = new Intent(context, DescriptionTrainers.class);
-                        intent.putExtra("numberTrainer", Integer.toString(2));
-                        context.startActivity(intent);
-                        break;
+                        default:
+                            intent = new Intent(context, DescriptionTrainers.class);
+                            intent.putExtra("numberTrainer", "2");
+                            intent.putExtra("dad", dad);
+                            context.startActivity(intent);
+                            break;
+                    }
                 }
             }
         };
