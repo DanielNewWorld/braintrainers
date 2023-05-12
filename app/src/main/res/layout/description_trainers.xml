@@ -67,6 +67,21 @@
             android:textSize="24dp"
             android:text="@string/btn_next" />
 
+        <TextView
+            android:id="@+id/txtAuthor"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_Author" />
+
+        <TextView
+            android:id="@+id/txtAuthorDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

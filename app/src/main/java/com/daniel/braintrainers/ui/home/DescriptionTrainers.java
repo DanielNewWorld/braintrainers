@@ -15,10 +15,11 @@ import com.daniel.braintrainers.trainers.FindNumberActivity_0;
 import com.daniel.braintrainers.trainers.KvitnykActivity_1;
 
 public class DescriptionTrainers extends AppCompatActivity {
-    TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest;
+    TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest, txtAuthorDesc;
     Button btnTrainingStart;
     Intent intent;
     String switchTrainer, dad;
+    String[] trainers_name, authorDesc, trainers_quest, meta;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,6 +29,7 @@ public class DescriptionTrainers extends AppCompatActivity {
 
         btnTrainingStart = findViewById(R.id.training_btn_start);
         txtNameTrainer = (TextView) findViewById(R.id.txtNameTrainers);
+        txtAuthorDesc = (TextView) findViewById(R.id.txtAuthorDesc);
         txtDesc1 = (TextView) findViewById(R.id.txt_trainer_decription_1);
         txtDesc2 = (TextView) findViewById(R.id.txt_trainer_decription_2);
         txtDesc3 = (TextView) findViewById(R.id.txt_trainer_decription_3);
@@ -65,9 +67,10 @@ public class DescriptionTrainers extends AppCompatActivity {
         };
         btnTrainingStart.setOnClickListener(onClickGo);
 
-        String []trainers_name = getResources().getStringArray(R.array.trainers_name_array);
-        String []trainers_quest = getResources().getStringArray(R.array.trainers_txt_quest_array);
-        String []meta = getResources().getStringArray(R.array.meta_array);
+        trainers_name = getResources().getStringArray(R.array.trainers_name_array);
+        trainers_quest = getResources().getStringArray(R.array.trainers_txt_quest_array);
+        meta = getResources().getStringArray(R.array.meta_array);
+        authorDesc = getResources().getStringArray(R.array.author_desc_array);
 
         switch (switchTrainer) {
             case "1":
@@ -77,6 +80,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc2.setText(meta[1]);
                 txtDesc3.setText(meta[2]);
                 btnTrainingStart.setText(R.string.btn_next);
+                txtAuthorDesc.setText(authorDesc[0]);
                 break;
             case "2":
                 txtNameTrainer.setText(trainers_name[1]);
@@ -85,6 +89,7 @@ public class DescriptionTrainers extends AppCompatActivity {
                 txtDesc2.setText(meta[2]);
                 txtDesc3.setText(meta[4]);
                 btnTrainingStart.setText(R.string.btn_next);
+                txtAuthorDesc.setText(authorDesc[1]);
                 break;
 
             default:

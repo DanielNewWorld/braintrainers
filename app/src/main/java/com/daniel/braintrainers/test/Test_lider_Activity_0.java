@@ -247,30 +247,30 @@ public class Test_lider_Activity_0 extends Activity {
             };
             personViewHolder.btnNext.setOnClickListener(onClickYes);
 
-            View.OnClickListener radioButtonClickListener = new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    RadioButton rb = (RadioButton) v;
-                    switch (rb.getId()) {
-                        case R.id.radioBtn1:
-                            txtDesc.setText("id: " + Integer.toString(itemsClassTest.get(i).id) + "\n" +
-                                    "points: " + points + "\n" +
-                                    "quest: " + questNum);
-                            break;
-
-                        case R.id.radioBtn2:
-                            txtDesc.setText("id: " + Integer.toString(itemsClassTest.get(i).id) + "\n" +
-                                    "points: " + points + "\n" +
-                                    "quest: " + questNum);
-                            break;
-
-                        default:
-                            break;
-                    }
-                }
-            };
-            personViewHolder.personName_1.setOnClickListener(radioButtonClickListener);
-            personViewHolder.personName_2.setOnClickListener(radioButtonClickListener);
+//            View.OnClickListener radioButtonClickListener = new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    RadioButton rb = (RadioButton) v;
+//                    switch (rb.getId()) {
+//                        case R.id.radioBtn1:
+//                            txtDesc.setText("id: " + Integer.toString(itemsClassTest.get(i).id) + "\n" +
+//                                    "points: " + points + "\n" +
+//                                    "quest: " + questNum);
+//                            break;
+//
+//                        case R.id.radioBtn2:
+//                            txtDesc.setText("id: " + Integer.toString(itemsClassTest.get(i).id) + "\n" +
+//                                    "points: " + points + "\n" +
+//                                    "quest: " + questNum);
+//                            break;
+//
+//                        default:
+//                            break;
+//                    }
+//                }
+//            };
+//            personViewHolder.personName_1.setOnClickListener(radioButtonClickListener);
+//            personViewHolder.personName_2.setOnClickListener(radioButtonClickListener);
         }
 
         @Override
