@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.daniel.braintrainers.menu.SettingsActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -106,9 +107,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Intent intent;
+
         switch (id) {
+            case R.id.action_settings:
+                intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+
             case R.id.action_privacy:
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bit.ly/3mIz8cl"));
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bit.ly/3mIz8cl"));
                 startActivity(intent);
                 return true;
         }

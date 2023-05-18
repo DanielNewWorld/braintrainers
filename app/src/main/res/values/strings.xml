@@ -38,6 +38,9 @@
     //----trainers list----
     <string name="trainers_txt_desc">Виберіть тренажер</string>
 
+    //----settings----
+    <string name="txt_locale">Виберіть мову:</string>
+
     //---test lider----
     <string-array name="test_lider_array_1">
         <item>Концентруватись на завданні, щоб його виконати</item>

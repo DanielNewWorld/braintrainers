@@ -42,7 +42,7 @@
         <activity android:name=".trainers.KvitnykActivity_1"></activity>
         <activity android:name=".test.Test_lider_Activity_0"></activity>
         <activity android:name=".test.TestEndActivity"></activity>
-
+        <activity android:name=".menu.SettingsActivity"></activity>
     </application>
 
 </manifest>

@@ -6,15 +6,14 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 
 import java.util.Locale;
 
-public class settings extends Activity {
+public class SettingsActivity extends Activity {
+    TextView txtLocale;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,5 +24,8 @@ public class settings extends Activity {
         Resources res = getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
 
+        txtLocale = (TextView) findViewById(R.id.txtLocale);
+
+        txtLocale.setText(R.string.txt_locale);
     }
 }
