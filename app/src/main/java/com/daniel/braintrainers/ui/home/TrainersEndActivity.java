@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,8 @@ import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.ui.home.DescriptionTrainers;
 import com.daniel.braintrainers.ui.trainers.TrainersListFragment;
+
+import java.util.Locale;
 
 public class TrainersEndActivity extends Activity {
 
@@ -26,6 +30,11 @@ public class TrainersEndActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trainer_end);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(MainActivity.localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         txtAnswer = (TextView) findViewById(R.id.trainer_txt_answer);
         txtNeuron = (TextView) findViewById(R.id.trainer_txt_neuron);

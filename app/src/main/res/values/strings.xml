@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Розвиток мета-навичок. Дивовижна гра життя</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_subtitle">daniel.new.world@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Налаштування</string>
 
     <string name="menu_home">Тренування</string>

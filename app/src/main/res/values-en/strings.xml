@@ -1,0 +1,119 @@
+<resources>
+    <string name="app_name">Development of meta-skills. Amazing game of life</string>
+    <string name="nav_header_subtitle">daniel.new.world@gmail.com</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Training</string>
+    <string name="menu_trainers">Trainers</string>
+    <string name="menu_statistic">Statistics</string>
+    <string name="menu_test">Tests</string>
+
+    <string name="home_txt_hello">Hello!</string>
+    <string name="home_btn_start">Start training</string>
+    <string name="test_txt_quest">Choose one statement that is most characteristic of your behavior</string>
+    <string name="test_message_select">Choose one statement</string>
+    <string name="txt_Author">The author of the methodology</string>
+
+    //--end description--
+    <string name="training_txt_info_end">Training is over</string>
+    <string name="training_txt_answer_end">True answers</string>
+    <string name="training_txt_neuron_end">Neurons are created</string>
+    <string name="training_txt_results_end">Your results</string>
+    <string name="training_btn_end">Finish training</string>
+    <string name="test_btn_end">End testing</string>
+
+    //---
+    <string name="back_message">Click again to exit</string>
+    <string name="Privacy">Privacy Policy</string>
+
+    //----Trainers---
+    <string name="training_txt_desc">Trains:</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+
+    //----test list----
+    <string name="test_txt_desc">Select a test</string>
+
+    //----trainers list----
+    <string name="trainers_txt_desc">Choose a simulator</string>
+
+    //---test lider----
+    <string-array name="test_lider_array_1">
+        <item>Concentrate on the task in order to complete it</item>
+        <item>Form your own opinion by listening to others</item>
+        <item>Avoid or minimize risk</item>
+        <item>Looking forward to the necessary progress</item>
+        <item>Concentrate more on the task</item>
+        <item>Worrying about what still needs to be done</item>
+        <item>Do not show excitement about the task</item>
+        <item>Hope for luck</item>
+        <item>Keep your opinion to yourself</item>
+        <item>Often surprising people</item>
+    </string-array>
+
+    <string-array name="test_lider_array_2">
+        <item>Find out if the task is correct</item>
+        <item>To listen to different opinions, and then choose from them the most, in your opinion, correct</item>
+        <item>Love the risk</item>
+        <item>Gradually go to the set goal</item>
+        <item>Focus more on relationships with colleagues</item>
+        <item>Be proud of what has already been achieved</item>
+        <item>Demonstrate your excitement about the task</item>
+        <item>Build plans that can be controlled</item>
+        <item>Spending a lot of time trying to sway people to your point of view</item>
+        <item>It is rare to surprise people</item>
+    </string-array>
+
+    //---color name----
+    <string-array name="color_name_array">
+        <item>black</item>
+        <item>blue</item>
+        <item>blue</item>
+        <item>gray</item>
+        <item>green</item>
+        <item>red</item>
+        <item>purple</item>
+        <item>yellow</item>
+    </string-array>
+
+    //---trainers name----
+    <string-array name="trainers_name_array">
+        <item>Number search game</item>
+        <item>Flower garden</item>
+    </string-array>
+
+    //----test name----
+    <string-array name="test_name_array">
+        <item>Are you a leader or a manager?</item>
+    </string-array>
+
+    //--quest----
+    <string-array name="trainers_txt_quest_array">
+        <item>Find the given number</item>
+        <item>Does the name of the color on the top card match the color of the text on the bottom card?</item>
+    </string-array>
+
+    //----meta----
+    <string-array name="meta_array">
+        <item>Arbitrary attention</item>
+        <item>Concentration and switching of attention</item>
+        <item>Visual perception</item>
+        <item>Attention function</item>
+        <item>Figurative thinking</item>
+    </string-array>
+
+    //----test lider 1----
+    <string-array name="test_lider_answer_array">
+        <item>You feel comfortable in a leadership role and may not like some of the responsibilities of a manager. Make sure you can manage people or delegate it to someone else, as ongoing managerial responsibilities are just as important as effective leadership.</item>
+        <item>You have a tendency to lead, but you need to train.</item>
+        <item>You prefer to be a manager rather than a leader, and probably expect leadership actions from others in many cases, while you concentrate on solving tasks and managing work processes.</item>
+    </string-array>
+
+    //----Author desc----
+    <string-array name="author_desc_array">
+        <item>This technique is called "Numerical search game" and was developed by the famous American psychologist and teacher Edward de Bono. \n He suggested using this game to develop search and concentration skills.</item>
+        <item>This technique was developed and is called the Stroop test. It was created by the psychologist and psychiatrist Jan Stroop from the University of Copenhagen in 1935.</item>
+    </string-array>
+
+</resources>

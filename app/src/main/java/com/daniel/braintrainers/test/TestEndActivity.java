@@ -3,6 +3,8 @@ package com.daniel.braintrainers.test;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,8 @@ import android.widget.Toast;
 
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
+
+import java.util.Locale;
 
 public class TestEndActivity extends Activity {
 
@@ -23,6 +27,11 @@ public class TestEndActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_end);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(MainActivity.localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         txtResults = (TextView) findViewById(R.id.txtResults);
         btnEnd = (Button) findViewById(R.id.btnEnd);

@@ -3,6 +3,8 @@ package com.daniel.braintrainers.ui.home;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,9 +12,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.trainers.FindNumberActivity_0;
 import com.daniel.braintrainers.trainers.KvitnykActivity_1;
+
+import java.util.Locale;
 
 public class DescriptionTrainers extends AppCompatActivity {
     TextView txtNameTrainer, txtDesc1, txtDesc2, txtDesc3, txtQuest, txtAuthorDesc;
@@ -26,6 +31,11 @@ public class DescriptionTrainers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.description_trainers);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(MainActivity.localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         btnTrainingStart = findViewById(R.id.training_btn_start);
         txtNameTrainer = (TextView) findViewById(R.id.txtNameTrainers);

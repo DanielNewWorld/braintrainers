@@ -1,6 +1,8 @@
 package com.daniel.braintrainers;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,8 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.daniel.braintrainers.databinding.ActivityMainBinding;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
+    public static String localeSet = "en";
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private static long back_pressed;
@@ -29,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -54,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //----
-
 //        privacy.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -87,9 +96,10 @@ public class MainActivity extends AppCompatActivity {
             System.runFinalizersOnExit(true);
             System.exit(0);
         }
-        else
+        else {
             Toast.makeText(getBaseContext(), R.string.back_message,
                     Toast.LENGTH_SHORT).show();
+        }
         back_pressed = System.currentTimeMillis();
     }
 

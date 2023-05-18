@@ -3,6 +3,8 @@ package com.daniel.braintrainers.trainers;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,11 +18,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class FindNumberActivity_0 extends Activity {
     private RecyclerView rv;
@@ -42,6 +46,11 @@ public class FindNumberActivity_0 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_number_recyclerview_activity);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(MainActivity.localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         rv=(RecyclerView)findViewById(R.id.rv);
         txtInfoNumber = (TextView) findViewById(R.id.txt_info_number);

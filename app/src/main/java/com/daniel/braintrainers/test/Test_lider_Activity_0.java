@@ -3,6 +3,8 @@ package com.daniel.braintrainers.test;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,12 +19,14 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.trainers.KvitnykActivity_1;
 import com.daniel.braintrainers.ui.home.TrainersEndActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Test_lider_Activity_0 extends Activity {
     private RecyclerView rv_test;
@@ -36,6 +40,11 @@ public class Test_lider_Activity_0 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_chekbox_lider_activity);
+
+        Configuration config = new Configuration();
+        config.setLocale(new Locale(MainActivity.localeSet));
+        Resources res = getResources();
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         rv_test = (RecyclerView) findViewById(R.id.rv_test);
         txtQuest = (TextView) findViewById(R.id.txtQuestion);
