@@ -1,8 +1,14 @@
 package com.daniel.braintrainers;
 
+import static com.daniel.braintrainers.DBHelper.tableName;
+import static com.daniel.braintrainers.DBHelper.keyLocaleDefault;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -27,14 +33,31 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String localeSet = "en";
+    public static String[] localeArray = {"English", "українська"};
+    public static String[] localeArrayID = {"en", "uk"};
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private static long back_pressed;
 
+    DBHelper dbHelper;
+    SQLiteDatabase db;
+    String query;
+    Cursor c;
+    String localeSet = "en";
+
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        dbHelper = new DBHelper(this);
+        db = dbHelper.getReadableDatabase();
+        query = "SELECT * FROM " + tableName;
+        c = db.rawQuery(query, null);
+        c.moveToFirst(); // переходим на первую строку
+        localeSet = c.getString(c.getColumnIndex(keyLocaleDefault));
+        c.close();
+        dbHelper.close();
 
         Configuration config = new Configuration();
         config.setLocale(new Locale(localeSet));

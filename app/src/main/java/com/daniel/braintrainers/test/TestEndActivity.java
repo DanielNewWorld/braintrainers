@@ -1,16 +1,23 @@
 package com.daniel.braintrainers.test;
 
+import static com.daniel.braintrainers.DBHelper.keyLocaleDefault;
+import static com.daniel.braintrainers.DBHelper.tableName;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daniel.braintrainers.DBHelper;
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 
@@ -23,13 +30,29 @@ public class TestEndActivity extends Activity {
     Button btnEnd;
     String results;
 
+    DBHelper dbHelper;
+    SQLiteDatabase db;
+    String query;
+    Cursor c;
+    String localeSet = "en";
+
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_end);
 
+        dbHelper = new DBHelper(this);
+        db = dbHelper.getReadableDatabase();
+        query = "SELECT * FROM " + tableName;
+        c = db.rawQuery(query, null);
+        c.moveToFirst(); // переходим на первую строку
+        localeSet = c.getString(c.getColumnIndex(keyLocaleDefault));
+        c.close();
+        dbHelper.close();
+
         Configuration config = new Configuration();
-        config.setLocale(new Locale(MainActivity.localeSet));
+        config.setLocale(new Locale(localeSet));
         Resources res = getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
 

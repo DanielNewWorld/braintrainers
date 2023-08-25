@@ -1,10 +1,15 @@
 package com.daniel.braintrainers.trainers;
 
+import static com.daniel.braintrainers.DBHelper.keyLocaleDefault;
+import static com.daniel.braintrainers.DBHelper.tableName;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +24,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.daniel.braintrainers.DBHelper;
 import com.daniel.braintrainers.MainActivity;
 import com.daniel.braintrainers.R;
 import com.daniel.braintrainers.ui.home.TrainersEndActivity;
@@ -45,13 +51,29 @@ public class KvitnykActivity_1 extends Activity {
     boolean quest = false;
     String switchTrainer, dad;
 
+    DBHelper dbHelper;
+    SQLiteDatabase db;
+    String query;
+    Cursor c;
+    String localeSet = "en";
+
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kvitnyk_recyclerview_activity);
 
+        dbHelper = new DBHelper(this);
+        db = dbHelper.getReadableDatabase();
+        query = "SELECT * FROM " + tableName;
+        c = db.rawQuery(query, null);
+        c.moveToFirst(); // переходим на первую строку
+        localeSet = c.getString(c.getColumnIndex(keyLocaleDefault));
+        c.close();
+        dbHelper.close();
+
         Configuration config = new Configuration();
-        config.setLocale(new Locale(MainActivity.localeSet));
+        config.setLocale(new Locale(localeSet));
         Resources res = getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
 
